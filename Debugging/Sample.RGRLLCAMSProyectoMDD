@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tapiz xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="e4445c61-a4b9-4c95-aea6-d9ad93e67ca3" xmlns="http://schemas.microsoft.com/dsltools/RGRLLCAMSProyectoMDD">
+  <window>
+    <tapizHasWindow Id="5e351aac-d985-47c6-8ca7-d2a7f755d933">
+      <mainWindow Id="50abf75e-0342-457b-8e64-f85fa4d9d51e" name="CINESIA" sizeX="0" sizeY="0">
+        <menu>
+          <windowHasMenu Id="6f054121-d589-4b28-a250-9d283ec128f5">
+            <menu Id="e581efe4-9e82-495c-93fe-2aabad3abadc" id="0" title="¿Qué quiere hacer?">
+              <item>
+                <menuHasItem Id="381373f8-ae54-4e61-8ee8-e69e0d7f8df7">
+                  <item Id="16a0a8c0-5675-405e-bb6f-3308606fc62f" title="ReservarPelicula " />
+                </menuHasItem>
+                <menuHasItem Id="8f893dd9-f98d-47cb-9465-64a485d0d76f">
+                  <item Id="7262eff0-e22b-4fbf-810a-53aa07f56aa0" title="CancelarReservaDePelicula" />
+                </menuHasItem>
+              </item>
+            </menu>
+          </windowHasMenu>
+        </menu>
+        <button>
+          <windowHasButton Id="d5620c22-20de-46c6-bbcc-e65fcc89a96d">
+            <button Id="40110f23-e71e-4792-ab68-708fbce0409c" id="0" title="Salir" />
+          </windowHasButton>
+        </button>
+        <secondaryWindow>
+          <mainWindowReferencesSecondaryWindow Id="7b774050-e153-4c54-99e3-6cf592b6b621">
+            <secondaryWindowMoniker Id="35fa4b39-4719-4e1f-9aae-c01b9c22ca3a" />
+          </mainWindowReferencesSecondaryWindow>
+          <mainWindowReferencesSecondaryWindow Id="cad64796-f5ed-4f0a-90c3-674585c452e3">
+            <secondaryWindowMoniker Id="5db568eb-d308-457d-b7b3-b9bbbf0dcb91" />
+          </mainWindowReferencesSecondaryWindow>
+        </secondaryWindow>
+      </mainWindow>
+    </tapizHasWindow>
+    <tapizHasWindow Id="6017ba34-d798-4ae1-95b0-84956e0ba5b7">
+      <secondaryWindow Id="11df728c-444c-4f74-a6d6-27a9fa72bece" name="Film" sizeX="0" sizeY="0">
+        <menu>
+          <windowHasMenu Id="38693350-0097-45f8-bff6-830035301c79">
+            <menu Id="f980568c-4890-46c5-a6a9-a22b31abc6d0" id="0" title="Seleccione su película">
+              <item>
+                <menuHasItem Id="ce31cf28-4e15-42ee-a9e4-40a423c6e2e5">
+                  <item Id="367fef14-1070-43ac-acbf-8d7302e98fcc" title="UnPeligroMayor" />
+                </menuHasItem>
+                <menuHasItem Id="3ab29aa8-50d6-4f53-911f-873aaee1d4b9">
+                  <item Id="8ffbd71f-52ab-4cc9-a6b4-f735eb492b66" title="PlanetETSISI" />
+                </menuHasItem>
+                <menuHasItem Id="d00093ee-8315-4389-9fbf-ceea0af17deb">
+                  <item Id="695aa4f5-39d3-459f-8560-215e5383dcab" title="MisionImposible:AprobandoIPS" />
+                </menuHasItem>
+                <menuHasItem Id="24d08327-30c7-4c74-9431-6888a8f1721f">
+                  <item Id="68b6d835-1f36-4995-9f50-9175f007d8e1" title="Mr.Robot" />
+                </menuHasItem>
+                <menuHasItem Id="ebd63ea8-207e-4bda-9f3c-5d7760d0f086">
+                  <item Id="94bf1c81-2781-4eb6-b167-322381fbef15" title="AprobandoIPS:LaPelicula" />
+                </menuHasItem>
+              </item>
+            </menu>
+          </windowHasMenu>
+        </menu>
+        <button>
+          <windowHasButton Id="8e8eb46d-cd84-42ad-b7a9-ea21ac5ad55e">
+            <button Id="b4490538-e18b-40f9-8eef-72a5c5ad80ad" id="1" title="Atrás" />
+          </windowHasButton>
+          <windowHasButton Id="07b0d062-637b-49a9-8aee-57d504f58938">
+            <button Id="73bb6b7c-8d72-4c6b-ac3c-29586622820e" id="0" title="Salir" />
+          </windowHasButton>
+        </button>
+        <targetSecondaryWindow>
+          <secondaryWindowReferencesTargetSecondaryWindow Id="2c6abb64-b566-41f6-9a0f-5500c8443aa3">
+            <secondaryWindowMoniker Id="dca50cab-9c8a-4f62-83a0-81e7d0bab45f" />
+          </secondaryWindowReferencesTargetSecondaryWindow>
+        </targetSecondaryWindow>
+      </secondaryWindow>
+    </tapizHasWindow>
+    <tapizHasWindow Id="ca019553-3fec-43d8-9f85-380662cc89e0">
+      <secondaryWindow Id="dca50cab-9c8a-4f62-83a0-81e7d0bab45f" name="Time" sizeX="0" sizeY="0">
+        <menu>
+          <windowHasMenu Id="58ade387-4df5-4016-b574-0b3dba766015">
+            <menu Id="4bd6dcb3-e66c-450d-8327-0dae11a8f6a1" id="0" title="Seleccione la sesión">
+              <item>
+                <menuHasItem Id="2fb6ed7f-4776-4ea1-ac87-e1383cb13ba4">
+                  <item Id="1539d343-77b4-4bd2-804a-b24e97bdc4f9" title="14:00" />
+                </menuHasItem>
+                <menuHasItem Id="a3db9cf2-6669-482b-9fed-058ce6cc4c1d">
+                  <item Id="8a981dc7-40ef-4e26-8752-379864dbd507" title="17:00" />
+                </menuHasItem>
+                <menuHasItem Id="84ced397-6e8d-4bfe-9422-4d6e5f2d763a">
+                  <item Id="67674a9f-da57-4af5-9fd3-0b69ccc191b9" title="19:00" />
+                </menuHasItem>
+                <menuHasItem Id="eded47d5-0d1b-4b86-829c-ea6e779b0f75">
+                  <item Id="fe16e9be-6dd1-464f-b23e-c2bb5c299f5f" title="22:00" />
+                </menuHasItem>
+              </item>
+            </menu>
+          </windowHasMenu>
+        </menu>
+        <button>
+          <windowHasButton Id="f8663c00-9f76-4d8f-a9e1-600bb3930d1a">
+            <button Id="ff384c37-2d41-46c3-afb4-01d2589bf42b" id="1" title="Atrás" />
+          </windowHasButton>
+          <windowHasButton Id="513900b0-79cc-4a20-b2b1-3e61f4716efc">
+            <button Id="1012a4da-91fa-4d6f-8cda-6135e6a9db32" id="0" title="Salir" />
+          </windowHasButton>
+        </button>
+        <targetSecondaryWindow>
+          <secondaryWindowReferencesTargetSecondaryWindow Id="42ffab19-afe1-4ce7-9ae4-66910d717f62">
+            <secondaryWindowMoniker Id="19721764-6826-44ac-aa70-ec636556742a" />
+          </secondaryWindowReferencesTargetSecondaryWindow>
+        </targetSecondaryWindow>
+      </secondaryWindow>
+    </tapizHasWindow>
+    <tapizHasWindow Id="2a811f9d-9821-41b7-93d7-3095e0f1689c">
+      <secondaryWindow Id="19721764-6826-44ac-aa70-ec636556742a" name="Seat" sizeX="0" sizeY="0">
+        <menu>
+          <windowHasMenu Id="9568080e-d248-466c-9f2a-87727507b0b4">
+            <menu Id="6cfaf72c-8015-44b1-b5a4-dcf4846d7846" id="0" title="Seleccione asiento">
+              <item>
+                <menuHasItem Id="420b1f32-c349-4996-b096-02b85453f6e0">
+                  <item Id="d0a8095f-a408-48f7-bc80-f9a62f2bdbf6" title="2-1" />
+                </menuHasItem>
+                <menuHasItem Id="2701bfa2-e791-4a1d-bd6d-0b2fe3eb9fd9">
+                  <item Id="92a6b052-efd9-4fb3-9f7f-0ad56db5c17e" title="2-2" />
+                </menuHasItem>
+                <menuHasItem Id="1d49a6a4-d622-4639-8c08-cd972e77ac92">
+                  <item Id="684dfcb7-18d0-4d24-8446-46235d1e300d" title="3-2" />
+                </menuHasItem>
+                <menuHasItem Id="80397c5b-05a8-4ed2-a127-5d7699fa2fe1">
+                  <item Id="020eefca-ce43-4abd-82af-b1e74e917806" title="4-1" />
+                </menuHasItem>
+                <menuHasItem Id="8e36d7a3-7841-4b2e-94f9-2b47508ee676">
+                  <item Id="9f2334ad-f49b-4d2e-af73-561452b30b8b" title="1-1" />
+                </menuHasItem>
+                <menuHasItem Id="4e4230ad-839e-4c92-958b-21e0840fe856">
+                  <item Id="c9726490-fbe5-4742-a839-9d2c71dbd6c0" title="1-2" />
+                </menuHasItem>
+                <menuHasItem Id="8cc7f4c4-ebf6-4e36-aed3-dda014a50457">
+                  <item Id="98cd7e71-5233-4acb-88b6-2fad84508233" title="3-1" />
+                </menuHasItem>
+                <menuHasItem Id="98fe8629-de0b-45ab-965a-269f0593577c">
+                  <item Id="2e2d6579-d65e-4bcd-a7db-f05d45512455" title="1-4" />
+                </menuHasItem>
+                <menuHasItem Id="162db913-ea7e-4173-8e4b-01b95cd46c17">
+                  <item Id="585104af-543b-4670-b687-771953c5a8c6" title="1-3" />
+                </menuHasItem>
+                <menuHasItem Id="3e1878b9-3ac0-4d9d-86b6-56830e79bf92">
+                  <item Id="01807fd9-2096-4977-9e37-dc151ff1daf2" title="4-2" />
+                </menuHasItem>
+                <menuHasItem Id="4958e456-4e56-42c5-a1cf-d30183b74725">
+                  <item Id="8916b27f-bd6c-49d9-9f4c-077bfa3fde0f" title="3-4" />
+                </menuHasItem>
+                <menuHasItem Id="a51f0742-3479-4011-940d-0c4bd0d4912d">
+                  <item Id="e1719bc8-6534-4ba4-8edf-de2872ef8c8f" title="3-3" />
+                </menuHasItem>
+                <menuHasItem Id="048df99f-972c-4c88-9c9f-624fba711644">
+                  <item Id="d7d0e075-0625-4a12-836f-ac37cf7cee1f" title="2-4" />
+                </menuHasItem>
+                <menuHasItem Id="9a29d590-78c3-40c2-9a02-e2bf6eddcf7c">
+                  <item Id="9ba37a42-6c2b-420d-b8cc-71e9ae2ea91a" title="4-4" />
+                </menuHasItem>
+                <menuHasItem Id="ae384a64-e197-43b2-b1bf-2d539128eb47">
+                  <item Id="f1b6108f-d1b5-4919-ab14-1a596e113d62" title="4-3" />
+                </menuHasItem>
+                <menuHasItem Id="21ded422-9be8-4e95-8167-ea12825ddec2">
+                  <item Id="345a430d-ea90-4bf4-8e95-5ce5d3a9f4d2" title="2-3" />
+                </menuHasItem>
+              </item>
+            </menu>
+          </windowHasMenu>
+        </menu>
+        <button>
+          <windowHasButton Id="5fed94b4-d140-4708-8b5a-2806d563db1f">
+            <button Id="11e7cb28-89cc-40de-9311-328398fcfce0" id="1" title="Atrás" />
+          </windowHasButton>
+          <windowHasButton Id="6f1c3ddf-9471-485f-99df-6eade14e122b">
+            <button Id="e43425d4-2306-49cd-81c0-7b1f7a492598" id="0" title="Salir" />
+          </windowHasButton>
+        </button>
+      </secondaryWindow>
+    </tapizHasWindow>
+    <tapizHasWindow Id="744de7a1-26db-4474-8dfb-182fe5aba4ae">
+      <secondaryWindow Id="35fa4b39-4719-4e1f-9aae-c01b9c22ca3a" name="City" sizeX="0" sizeY="0">
+        <menu>
+          <windowHasMenu Id="d991c087-c421-42c9-a6a7-fa5951e634eb">
+            <menu Id="6900509b-2a56-4d89-89ec-86013b522a24" id="0" title="Indique su localidad">
+              <item>
+                <menuHasItem Id="8511beed-b054-458d-b12d-05d8e8db9388">
+                  <item Id="f166119d-5a37-4f23-8830-c8966c3d3ed7" title="Madrid" />
+                </menuHasItem>
+                <menuHasItem Id="824b7582-dadd-414c-ad41-4d6ad231c08e">
+                  <item Id="7c834990-2cdc-41fd-bb16-b19c68313459" title="Barcelona" />
+                </menuHasItem>
+                <menuHasItem Id="b67aefbf-1352-4dbb-a7b7-a4def4d0bc78">
+                  <item Id="eec2f281-b4cd-4057-bd40-89b496c06c27" title="Sevilla" />
+                </menuHasItem>
+              </item>
+            </menu>
+          </windowHasMenu>
+          <windowHasMenu Id="8fd39f90-eb53-43a2-8667-d40d2efc701f">
+            <menu Id="b42af46d-c9b5-48db-9fcb-370c3d304aca" id="1" title="Seleccione un cine">
+              <item>
+                <menuHasItem Id="d483b96b-a523-468f-a3ba-31d0023bb296">
+                  <item Id="67cf8517-ea92-4b2d-90aa-b028e3598a1c" title="Cinesa" />
+                </menuHasItem>
+                <menuHasItem Id="ffd81df5-e00e-4b74-b016-0d738b2533bd">
+                  <item Id="06c4ccc9-6b6a-44d1-b1e6-6684bd2edd76" title="YelmoCines" />
+                </menuHasItem>
+                <menuHasItem Id="f1af4969-2a12-41e5-998c-3798c9f2b226">
+                  <item Id="bc1501d6-ae34-4a37-8f19-41f9c4960402" title="CinesSinFin" />
+                </menuHasItem>
+              </item>
+            </menu>
+          </windowHasMenu>
+        </menu>
+        <button>
+          <windowHasButton Id="8b293577-9ec2-4ecb-a900-365af1ba1073">
+            <button Id="ce79d516-4551-4345-bb5e-b97b73109689" id="1" title="Atrás" />
+          </windowHasButton>
+          <windowHasButton Id="1a8313bd-a29c-4661-9448-d191d9db5d23">
+            <button Id="13d92f1b-ec2e-498d-8891-bd08e2bb447f" id="0" title="Salir" />
+          </windowHasButton>
+        </button>
+        <targetSecondaryWindow>
+          <secondaryWindowReferencesTargetSecondaryWindow Id="ef3a476a-794d-49b0-8048-6b30371ad875">
+            <secondaryWindowMoniker Id="11df728c-444c-4f74-a6d6-27a9fa72bece" />
+          </secondaryWindowReferencesTargetSecondaryWindow>
+        </targetSecondaryWindow>
+      </secondaryWindow>
+    </tapizHasWindow>
+    <tapizHasWindow Id="e79b99d3-fa23-48dd-b0e0-0330c3ff5bc2">
+      <secondaryWindow Id="5db568eb-d308-457d-b7b3-b9bbbf0dcb91" name="cancelOption" sizeX="0" sizeY="0">
+        <menu>
+          <windowHasMenu Id="7da4efeb-8a0f-45d8-9cf5-e450959ac673">
+            <menu Id="df1c8226-5cce-41e5-883f-ee3d5bc19d1e" id="0" title="Seleccione su reserva a cancelar">
+              <item>
+                <menuHasItem Id="b4e1a403-8734-4741-9d81-b28c90a57d02">
+                  <item Id="4a0e18df-c84f-4b7f-87b0-31663caf112a" title="AC:ElRetornoDeCompu" />
+                </menuHasItem>
+                <menuHasItem Id="77d60c03-77c5-4787-ada8-3dcb4b503d09">
+                  <item Id="e2bd784a-3de2-42c8-b2ed-9015a4fba0c1" title="RC:LaUltimaComputada" />
+                </menuHasItem>
+              </item>
+            </menu>
+          </windowHasMenu>
+        </menu>
+        <button>
+          <windowHasButton Id="33437cdf-71e9-4ab9-ab1c-7a5a9ced780d">
+            <button Id="2a14feb4-3323-4ba0-b894-cd7546510bdf" id="1" title="Atrás" />
+          </windowHasButton>
+          <windowHasButton Id="d934c139-59b2-4aa2-9429-eb6b52e4210e">
+            <button Id="34c08882-f837-42ed-b783-2d4942a1ee75" id="0" title="Salir" />
+          </windowHasButton>
+        </button>
+      </secondaryWindow>
+    </tapizHasWindow>
+  </window>
+  <end>
+    <tapizHasEnd Id="2890049f-aed9-43de-9630-0e2079d31756">
+      <end Id="0483d9d0-53bb-4ec8-b5b7-0dcb10de8756" id="0">
+        <button>
+          <endReferencesButton Id="1a087f6b-8873-4bf6-b09f-aebb5d9e70dd">
+            <buttonMoniker Id="13d92f1b-ec2e-498d-8891-bd08e2bb447f" />
+          </endReferencesButton>
+          <endReferencesButton Id="d1422153-da37-4343-86ef-4aaf32dd198f">
+            <buttonMoniker Id="73bb6b7c-8d72-4c6b-ac3c-29586622820e" />
+          </endReferencesButton>
+        </button>
+      </end>
+    </tapizHasEnd>
+    <tapizHasEnd Id="33e97dbf-2b69-44cd-b3b3-242dc8dc0533">
+      <end Id="8eae4ab8-7713-4914-bdfa-db8a0ed89142" id="0">
+        <button>
+          <endReferencesButton Id="c1589bc4-5293-404f-9c42-bc15bb6437c6">
+            <buttonMoniker Id="40110f23-e71e-4792-ab68-708fbce0409c" />
+          </endReferencesButton>
+        </button>
+      </end>
+    </tapizHasEnd>
+    <tapizHasEnd Id="850e32a7-f9ba-4b3a-9bb7-6895b3ec2344">
+      <end Id="be12fabc-d3a6-4cb4-9cdf-429f61ea20d2" id="0">
+        <button>
+          <endReferencesButton Id="0487a0f4-7ad2-43f4-a82f-d0e4db2aaf0e">
+            <buttonMoniker Id="34c08882-f837-42ed-b783-2d4942a1ee75" />
+          </endReferencesButton>
+        </button>
+        <item>
+          <endReferencesItem Id="dcd38ebb-f302-42a3-a976-06a1c6f2ab85">
+            <itemMoniker Id="4a0e18df-c84f-4b7f-87b0-31663caf112a" />
+          </endReferencesItem>
+          <endReferencesItem Id="15d295d4-8b5f-42a6-b84f-63b807fcd0a6">
+            <itemMoniker Id="e2bd784a-3de2-42c8-b2ed-9015a4fba0c1" />
+          </endReferencesItem>
+        </item>
+      </end>
+    </tapizHasEnd>
+    <tapizHasEnd Id="0dc581b5-6b31-4cf5-8b14-17908ab2b88c">
+      <end Id="b9d57301-51de-45a5-b7f2-86d17e67bb97" id="0">
+        <button>
+          <endReferencesButton Id="ea2217cf-4d5b-4eeb-a973-a9c650a6a1ed">
+            <buttonMoniker Id="1012a4da-91fa-4d6f-8cda-6135e6a9db32" />
+          </endReferencesButton>
+          <endReferencesButton Id="f5a46479-ac0b-41b8-a5e4-0acc5f55ca3b">
+            <buttonMoniker Id="e43425d4-2306-49cd-81c0-7b1f7a492598" />
+          </endReferencesButton>
+        </button>
+        <item>
+          <endReferencesItem Id="58ea7050-9e3b-4253-8b2e-84cb931acc3a">
+            <itemMoniker Id="9f2334ad-f49b-4d2e-af73-561452b30b8b" />
+          </endReferencesItem>
+          <endReferencesItem Id="b8286c74-5e9d-47c4-b36e-660c936c1437">
+            <itemMoniker Id="c9726490-fbe5-4742-a839-9d2c71dbd6c0" />
+          </endReferencesItem>
+          <endReferencesItem Id="0b7ba056-a852-4def-a98c-230590d6ed63">
+            <itemMoniker Id="585104af-543b-4670-b687-771953c5a8c6" />
+          </endReferencesItem>
+          <endReferencesItem Id="50400c4d-bfca-445e-8e85-5f686cb85ca9">
+            <itemMoniker Id="2e2d6579-d65e-4bcd-a7db-f05d45512455" />
+          </endReferencesItem>
+          <endReferencesItem Id="63cd779e-b604-4ae0-a5de-3455766c3ae2">
+            <itemMoniker Id="d0a8095f-a408-48f7-bc80-f9a62f2bdbf6" />
+          </endReferencesItem>
+          <endReferencesItem Id="c0e0fcc8-009a-4e4f-8532-a33574170c91">
+            <itemMoniker Id="92a6b052-efd9-4fb3-9f7f-0ad56db5c17e" />
+          </endReferencesItem>
+          <endReferencesItem Id="ec998533-5a83-4a4c-848f-552a04d09fcc">
+            <itemMoniker Id="345a430d-ea90-4bf4-8e95-5ce5d3a9f4d2" />
+          </endReferencesItem>
+          <endReferencesItem Id="8162100f-432d-4d1c-87b8-3cf4c705db8e">
+            <itemMoniker Id="d7d0e075-0625-4a12-836f-ac37cf7cee1f" />
+          </endReferencesItem>
+          <endReferencesItem Id="871415b5-0fa5-49bc-8aa7-839c0cd43fe6">
+            <itemMoniker Id="98cd7e71-5233-4acb-88b6-2fad84508233" />
+          </endReferencesItem>
+          <endReferencesItem Id="6cf48e0a-bb6c-4f53-a329-70d5b22ee8b6">
+            <itemMoniker Id="684dfcb7-18d0-4d24-8446-46235d1e300d" />
+          </endReferencesItem>
+          <endReferencesItem Id="51ba7c78-cac2-4ac9-b804-3661aa4414d9">
+            <itemMoniker Id="e1719bc8-6534-4ba4-8edf-de2872ef8c8f" />
+          </endReferencesItem>
+          <endReferencesItem Id="c9017d69-e704-41b2-9666-e741a818c611">
+            <itemMoniker Id="8916b27f-bd6c-49d9-9f4c-077bfa3fde0f" />
+          </endReferencesItem>
+          <endReferencesItem Id="529d83d4-4713-4936-b725-931a24acfad6">
+            <itemMoniker Id="020eefca-ce43-4abd-82af-b1e74e917806" />
+          </endReferencesItem>
+          <endReferencesItem Id="19ce9a36-61f6-4947-8611-1f5693e46158">
+            <itemMoniker Id="01807fd9-2096-4977-9e37-dc151ff1daf2" />
+          </endReferencesItem>
+          <endReferencesItem Id="c1805e71-2153-46dc-8ec3-c103842be09b">
+            <itemMoniker Id="f1b6108f-d1b5-4919-ab14-1a596e113d62" />
+          </endReferencesItem>
+          <endReferencesItem Id="3ee0e768-a104-4aab-aa99-4f212b657f22">
+            <itemMoniker Id="9ba37a42-6c2b-420d-b8cc-71e9ae2ea91a" />
+          </endReferencesItem>
+        </item>
+      </end>
+    </tapizHasEnd>
+  </end>
+</tapiz>

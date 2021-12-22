@@ -1,0 +1,17 @@
+﻿<!--DSL Tools Language Template-->
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TemplateData>
+		<TemplateID>{4f9ddf77-2a6e-433e-8a24-c831c03f282d}</TemplateID>
+		<Name Package="{44324b7a-2a25-43bd-ad2e-364d605787ae}" ID="103"/>
+		<Description Package="{44324b7a-2a25-43bd-ad2e-364d605787ae}" ID="102"/>
+		<Icon Package="{44324b7a-2a25-43bd-ad2e-364d605787ae}" ID="201" />
+		<ProjectType>CSharp</ProjectType>
+		<SortOrder>360</SortOrder>
+		<DefaultName>RGRLLCAMSProyectoMDD.RGRLLCAMSProyectoMDD</DefaultName>
+	</TemplateData>
+	<TemplateContent>
+		<ProjectItem TargetFileName="$fileinputname$.RGRLLCAMSProyectoMDD">RGRLLCAMSProyectoMDD.RGRLLCAMSProyectoMDD</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$.RGRLLCAMSProyectoMDD.diagram">RGRLLCAMSProyectoMDD.diagram</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
+

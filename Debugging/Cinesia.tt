@@ -1,0 +1,73 @@
+﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" language="C#" hostspecific="True"#>
+<#@ output extension=".java" #>
+<#@ RGRLLCAMSProyectoMDD processor="RGRLLCAMSProyectoMDDDirectiveProcessor" requires="fileName='Sample.RGRLLCAMSProyectoMDD'" #>
+<#@ include file="EF.utility.CS.ttinclude" #>
+
+<#
+	var	fileManager = EntityFrameworkTemplateFileManager.Create(this);
+	fileManager.StartNewFile("Main.java");
+	createMain();
+	foreach(Window window in this.Tapiz.Window)
+	{
+		if (window is MainWindow)
+		{
+			fileManager.StartNewFile(window.Name + "MainW" + ".java");
+			printImports();
+			foreach(Menu menu in window.Menu)
+				declareDialog(menu.Id);
+				
+		}
+	}
+/*	WriteLine("*****************************************************************\n");
+	pProperties("FrameW_Window");
+	pConstructor("FrameW_Window");
+	if (countWindow() == 0)
+		WriteLine("Empty Solution. No existing Window");
+	else
+	{
+		int mW = countMainWindow();
+		if (mW > 0)
+		{
+			WriteLine("There has been " + mW + "Windows configured as MainWindow");
+			reportMainWindow();
+		}
+		int	sW = countSecondaryWindow();
+		if (sW > 0)
+		{
+			WriteLine("There has been " + sW + "Windows configured as SecondaryWindow");
+			reportSecondaryWindow();
+		}
+
+	}
+	*/
+	fileManager.Process();
+#>
+
+//Important Functions
+<#+
+	private void	createMain()
+	{
+		WriteLine(
+			"public class \t Application\n{\n" +
+			"\tpublic static void main (String[] args)\n\t{\n" +
+			"\t\tnew Framev_Principal();\n" +
+			"\t}\n}\n"
+		);
+	}
+#>
+
+<#+
+	private void	printImports()
+	{
+		WriteLine("import java.awt.*;\n" +
+			"import java.awt.event.*;\n"
+			);
+	}
+#>
+
+<#+
+	private	void	declareDialog(string name)
+	{
+		WriteLine("private Dialog" + name + "\twindow" + name);
+	}
+#>
