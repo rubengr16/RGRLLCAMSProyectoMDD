@@ -7,16 +7,30 @@
 	var	fileManager = EntityFrameworkTemplateFileManager.Create(this);
 	fileManager.StartNewFile("Main.java");
 	createMain();
-	WriteLine("HOLY CRAP");
 	foreach(Window window in this.Tapiz.Window)
 	{
 		if (window is MainWindow)
 		{
 			fileManager.StartNewFile(window.Name + "MainW" + ".java");
-			printImports();
+			setClassHeader("MainW");
+			foreach(Window sWindow in ((MainWindow)window).SecondaryWindow)
+				declareWindowD(sWindow.Name);
+			WriteLine("");
 			foreach(Menu menu in window.Menu)
-				declareDialog(menu.Name);
-				
+				foreach(Item item in menu.Item)
+					declareItem(item.Name);
+			foreach(Window sWindow in ((MainWindow)window).SecondaryWindow)
+				foreach(Menu menu in sWindow.Menu)
+					foreach(Item item in menu.Item)
+						declareItem(item.Name);
+			WriteLine("");
+			foreach(Button button in window.Button)
+				declareButton(button.Title, button.id);
+			foreach(Window sWindow in ((MainWindow)window).SecondaryWindow)
+			{
+				foreach(Button button in window.Button)
+					declareButton(button.Title, button.id);
+					
 		}
 	}
 /*	WriteLine("*****************************************************************\n");
@@ -58,17 +72,32 @@
 #>
 
 <#+
-	private void	printImports()
+	private void	setClassHeader(string name)
 	{
 		WriteLine("import java.awt.*;\n" +
-			"import java.awt.event.*;\n"
+			"import java.awt.event.*;\n\n" +
+			"public class\tFrame" + name + "extends Frame implements ActionListener\n{\n"
 			);
 	}
 #>
 
 <#+
-	private	void	declareDialog(string name)
+	private	void	declareWindowD(string name)
 	{
-		WriteLine("private Dialog" + name + "\twindow" + name);
+		WriteLine("\tprivate Dialog" + name + "\twindow" + name + ";");
+	}
+#>
+
+<#+
+	private	void	declareItem(string name)
+	{
+		WriteLine("\tprivate MenuItem\titem" + name + ";");
+	}
+#>
+
+<#+
+	private	void	declareButton(string name, int id)
+	{
+		WriteLine("\tprivate Button\tbutton" + name + id + ";");
 	}
 #>

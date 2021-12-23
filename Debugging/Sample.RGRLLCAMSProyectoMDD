@@ -59,10 +59,10 @@
         </menu>
         <button>
           <windowHasButton Id="8e8eb46d-cd84-42ad-b7a9-ea21ac5ad55e">
-            <button Id="b4490538-e18b-40f9-8eef-72a5c5ad80ad" id="1" title="Atrás" />
+            <button Id="b4490538-e18b-40f9-8eef-72a5c5ad80ad" id="2" title="Atrás" />
           </windowHasButton>
           <windowHasButton Id="07b0d062-637b-49a9-8aee-57d504f58938">
-            <button Id="73bb6b7c-8d72-4c6b-ac3c-29586622820e" id="0" title="Salir" />
+            <button Id="73bb6b7c-8d72-4c6b-ac3c-29586622820e" id="3" title="Salir" />
           </windowHasButton>
         </button>
         <targetSecondaryWindow>
@@ -96,10 +96,10 @@
         </menu>
         <button>
           <windowHasButton Id="f8663c00-9f76-4d8f-a9e1-600bb3930d1a">
-            <button Id="ff384c37-2d41-46c3-afb4-01d2589bf42b" id="1" title="Atrás" />
+            <button Id="ff384c37-2d41-46c3-afb4-01d2589bf42b" id="3" title="Atrás" />
           </windowHasButton>
           <windowHasButton Id="513900b0-79cc-4a20-b2b1-3e61f4716efc">
-            <button Id="1012a4da-91fa-4d6f-8cda-6135e6a9db32" id="0" title="Salir" />
+            <button Id="1012a4da-91fa-4d6f-8cda-6135e6a9db32" id="4" title="Salir" />
           </windowHasButton>
         </button>
         <targetSecondaryWindow>
@@ -169,10 +169,10 @@
         </menu>
         <button>
           <windowHasButton Id="5fed94b4-d140-4708-8b5a-2806d563db1f">
-            <button Id="11e7cb28-89cc-40de-9311-328398fcfce0" id="1" title="Atrás" />
+            <button Id="11e7cb28-89cc-40de-9311-328398fcfce0" id="3" title="Atrás" />
           </windowHasButton>
           <windowHasButton Id="6f1c3ddf-9471-485f-99df-6eade14e122b">
-            <button Id="e43425d4-2306-49cd-81c0-7b1f7a492598" id="0" title="Salir" />
+            <button Id="e43425d4-2306-49cd-81c0-7b1f7a492598" id="5" title="Salir" />
           </windowHasButton>
         </button>
       </secondaryWindow>
@@ -216,7 +216,7 @@
             <button Id="ce79d516-4551-4345-bb5e-b97b73109689" id="1" title="Atrás" />
           </windowHasButton>
           <windowHasButton Id="1a8313bd-a29c-4661-9448-d191d9db5d23">
-            <button Id="13d92f1b-ec2e-498d-8891-bd08e2bb447f" id="0" title="Salir" />
+            <button Id="13d92f1b-ec2e-498d-8891-bd08e2bb447f" id="2" title="Salir" />
           </windowHasButton>
         </button>
         <targetSecondaryWindow>
@@ -227,7 +227,7 @@
       </secondaryWindow>
     </tapizHasWindow>
     <tapizHasWindow Id="e79b99d3-fa23-48dd-b0e0-0330c3ff5bc2">
-      <secondaryWindow Id="5db568eb-d308-457d-b7b3-b9bbbf0dcb91" name="Cancel" sizeX="0" sizeY="0">
+      <secondaryWindow Id="5db568eb-d308-457d-b7b3-b9bbbf0dcb91" name="Canc" sizeX="0" sizeY="0">
         <menu>
           <windowHasMenu Id="7da4efeb-8a0f-45d8-9cf5-e450959ac673">
             <menu Id="df1c8226-5cce-41e5-883f-ee3d5bc19d1e" id="0" title="Seleccione su reserva a cancelar" name="Cancel">
@@ -244,10 +244,10 @@
         </menu>
         <button>
           <windowHasButton Id="33437cdf-71e9-4ab9-ab1c-7a5a9ced780d">
-            <button Id="2a14feb4-3323-4ba0-b894-cd7546510bdf" id="1" title="Atrás" />
+            <button Id="2a14feb4-3323-4ba0-b894-cd7546510bdf" id="0" title="Atrás" />
           </windowHasButton>
           <windowHasButton Id="d934c139-59b2-4aa2-9429-eb6b52e4210e">
-            <button Id="34c08882-f837-42ed-b783-2d4942a1ee75" id="0" title="Salir" />
+            <button Id="34c08882-f837-42ed-b783-2d4942a1ee75" id="1" title="Salir" />
           </windowHasButton>
         </button>
       </secondaryWindow>
