@@ -2,11 +2,12 @@
 <#@ output extension=".java" #>
 <#@ RGRLLCAMSProyectoMDD processor="RGRLLCAMSProyectoMDDDirectiveProcessor" requires="fileName='Sample.RGRLLCAMSProyectoMDD'" #>
 <#@ include file="EF.utility.CS.ttinclude" #>
-
+ 
 <#
 	var	fileManager = EntityFrameworkTemplateFileManager.Create(this);
 	fileManager.StartNewFile("Main.java");
 	createMain();
+	WriteLine("HOLY CRAP");
 	foreach(Window window in this.Tapiz.Window)
 	{
 		if (window is MainWindow)
@@ -14,7 +15,7 @@
 			fileManager.StartNewFile(window.Name + "MainW" + ".java");
 			printImports();
 			foreach(Menu menu in window.Menu)
-				declareDialog(menu.Id);
+				declareDialog(menu.Name);
 				
 		}
 	}

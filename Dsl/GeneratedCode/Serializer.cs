@@ -3418,6 +3418,23 @@ namespace UPM_IPS.RGRLLCAMSProyectoMDD
 					}
 				}
 			}
+			// Name
+			if (!serializationContext.Result.Failed)
+			{
+				string attribName = RGRLLCAMSProyectoMDDSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "name");
+				if (attribName != null)
+				{
+					global::System.String valueOfName;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribName, out valueOfName))
+					{
+						instanceOfMenu.Name = valueOfName;
+					}
+					else
+					{	// Invalid property value, ignored.
+						RGRLLCAMSProyectoMDDSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "name", typeof(global::System.String), attribName);
+					}
+				}
+			}
 		}
 	
 		/// <summary>
@@ -3948,6 +3965,17 @@ namespace UPM_IPS.RGRLLCAMSProyectoMDD
 				{
 					if (!string.IsNullOrEmpty(propValue))
 						RGRLLCAMSProyectoMDDSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "title", propValue);
+	
+				}
+			}
+			// Name
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfMenu.Name;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						RGRLLCAMSProyectoMDDSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "name", propValue);
 	
 				}
 			}
@@ -4909,6 +4937,23 @@ namespace UPM_IPS.RGRLLCAMSProyectoMDD
 					}
 				}
 			}
+			// Name
+			if (!serializationContext.Result.Failed)
+			{
+				string attribName = RGRLLCAMSProyectoMDDSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "name");
+				if (attribName != null)
+				{
+					global::System.String valueOfName;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribName, out valueOfName))
+					{
+						instanceOfItem.Name = valueOfName;
+					}
+					else
+					{	// Invalid property value, ignored.
+						RGRLLCAMSProyectoMDDSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "name", typeof(global::System.String), attribName);
+					}
+				}
+			}
 		}
 	
 		/// <summary>
@@ -5342,6 +5387,17 @@ namespace UPM_IPS.RGRLLCAMSProyectoMDD
 				{
 					if (!string.IsNullOrEmpty(propValue))
 						RGRLLCAMSProyectoMDDSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "title", propValue);
+	
+				}
+			}
+			// Name
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfItem.Name;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						RGRLLCAMSProyectoMDDSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "name", propValue);
 	
 				}
 			}

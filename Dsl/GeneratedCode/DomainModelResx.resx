@@ -213,6 +213,14 @@
     <value>Title</value>
     <comment>DisplayName for DomainProperty &apos;Title&apos; on DomainClass &apos;Menu&apos;</comment>
   </data>
+  <data name="UPM_IPS.RGRLLCAMSProyectoMDD.Menu/Name.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.RGRLLCAMSProyectoMDD.Menu.Name</value>
+    <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;Menu&apos;</comment>
+  </data>
+  <data name="UPM_IPS.RGRLLCAMSProyectoMDD.Menu/Name.DisplayName" xml:space="preserve">
+    <value>Name</value>
+    <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;Menu&apos;</comment>
+  </data>
   <data name="UPM_IPS.RGRLLCAMSProyectoMDD.Button.Description" xml:space="preserve">
     <value>Description for UPM_IPS.RGRLLCAMSProyectoMDD.Button</value>
     <comment>Description for DomainClass &apos;Button&apos;</comment>
@@ -252,6 +260,14 @@
   <data name="UPM_IPS.RGRLLCAMSProyectoMDD.Item/Title.DisplayName" xml:space="preserve">
     <value>Title</value>
     <comment>DisplayName for DomainProperty &apos;Title&apos; on DomainClass &apos;Item&apos;</comment>
+  </data>
+  <data name="UPM_IPS.RGRLLCAMSProyectoMDD.Item/Name.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.RGRLLCAMSProyectoMDD.Item.Name</value>
+    <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;Item&apos;</comment>
+  </data>
+  <data name="UPM_IPS.RGRLLCAMSProyectoMDD.Item/Name.DisplayName" xml:space="preserve">
+    <value>Name</value>
+    <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;Item&apos;</comment>
   </data>
   <data name="UPM_IPS.RGRLLCAMSProyectoMDD.End.Description" xml:space="preserve">
     <value>Description for UPM_IPS.RGRLLCAMSProyectoMDD.End</value>

@@ -115,9 +115,11 @@ namespace UPM_IPS.RGRLLCAMSProyectoMDD
 				new DomainMemberInfo(typeof(Window), "SizeY", Window.SizeYDomainPropertyId, typeof(Window.SizeYPropertyHandler)),
 				new DomainMemberInfo(typeof(Menu), "id", Menu.idDomainPropertyId, typeof(Menu.idPropertyHandler)),
 				new DomainMemberInfo(typeof(Menu), "Title", Menu.TitleDomainPropertyId, typeof(Menu.TitlePropertyHandler)),
+				new DomainMemberInfo(typeof(Menu), "Name", Menu.NameDomainPropertyId, typeof(Menu.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(Button), "id", Button.idDomainPropertyId, typeof(Button.idPropertyHandler)),
 				new DomainMemberInfo(typeof(Button), "Title", Button.TitleDomainPropertyId, typeof(Button.TitlePropertyHandler)),
 				new DomainMemberInfo(typeof(Item), "Title", Item.TitleDomainPropertyId, typeof(Item.TitlePropertyHandler)),
+				new DomainMemberInfo(typeof(Item), "Name", Item.NameDomainPropertyId, typeof(Item.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(End), "id", End.idDomainPropertyId, typeof(End.idPropertyHandler)),
 			};
 		}
