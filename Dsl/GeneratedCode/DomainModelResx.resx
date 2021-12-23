@@ -269,6 +269,14 @@
     <value>Name</value>
     <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;Item&apos;</comment>
   </data>
+  <data name="UPM_IPS.RGRLLCAMSProyectoMDD.Item/Type.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.RGRLLCAMSProyectoMDD.Item.Type</value>
+    <comment>Description for DomainProperty &apos;Type&apos; on DomainClass &apos;Item&apos;</comment>
+  </data>
+  <data name="UPM_IPS.RGRLLCAMSProyectoMDD.Item/Type.DisplayName" xml:space="preserve">
+    <value>Type</value>
+    <comment>DisplayName for DomainProperty &apos;Type&apos; on DomainClass &apos;Item&apos;</comment>
+  </data>
   <data name="UPM_IPS.RGRLLCAMSProyectoMDD.End.Description" xml:space="preserve">
     <value>Description for UPM_IPS.RGRLLCAMSProyectoMDD.End</value>
     <comment>Description for DomainClass &apos;End&apos;</comment>

@@ -120,6 +120,7 @@ namespace UPM_IPS.RGRLLCAMSProyectoMDD
 				new DomainMemberInfo(typeof(Button), "Title", Button.TitleDomainPropertyId, typeof(Button.TitlePropertyHandler)),
 				new DomainMemberInfo(typeof(Item), "Title", Item.TitleDomainPropertyId, typeof(Item.TitlePropertyHandler)),
 				new DomainMemberInfo(typeof(Item), "Name", Item.NameDomainPropertyId, typeof(Item.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(Item), "Type", Item.TypeDomainPropertyId, typeof(Item.TypePropertyHandler)),
 				new DomainMemberInfo(typeof(End), "id", End.idDomainPropertyId, typeof(End.idPropertyHandler)),
 			};
 		}

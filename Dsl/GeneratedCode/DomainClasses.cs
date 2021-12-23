@@ -1813,6 +1813,93 @@ namespace UPM_IPS.RGRLLCAMSProyectoMDD
 		}
 		
 		#endregion
+		#region Type domain property code
+		
+		/// <summary>
+		/// Type domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid TypeDomainPropertyId = new global::System.Guid(0x505915fd, 0xd133, 0x4f88, 0xb1, 0x57, 0x92, 0x46, 0x8f, 0x41, 0x42, 0xfb);
+		
+		/// <summary>
+		/// Storage for Type
+		/// </summary>
+		private global::System.String typePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Type domain property.
+		/// Description for UPM_IPS.RGRLLCAMSProyectoMDD.Item.Type
+		/// </summary>
+		[DslDesign::DisplayNameResource("UPM_IPS.RGRLLCAMSProyectoMDD.Item/Type.DisplayName", typeof(global::UPM_IPS.RGRLLCAMSProyectoMDD.RGRLLCAMSProyectoMDDDomainModel), "UPM_IPS.RGRLLCAMSProyectoMDD.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("UPM_IPS.RGRLLCAMSProyectoMDD.Item/Type.Description", typeof(global::UPM_IPS.RGRLLCAMSProyectoMDD.RGRLLCAMSProyectoMDDDomainModel), "UPM_IPS.RGRLLCAMSProyectoMDD.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("505915fd-d133-4f88-b157-92468f4142fb")]
+		public global::System.String Type
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return typePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				TypePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Item.Type domain property.
+		/// </summary>
+		internal sealed partial class TypePropertyHandler : DslModeling::DomainPropertyValueHandler<Item, global::System.String>
+		{
+			private TypePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Item.Type domain property value handler.
+			/// </summary>
+			public static readonly TypePropertyHandler Instance = new TypePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Item.Type domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return TypeDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Item element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.typePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Item element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.typePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region Menu opposite domain role accessor
 		/// <summary>
 		/// Gets or sets Menu.

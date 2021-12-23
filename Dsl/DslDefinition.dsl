@@ -130,6 +130,11 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="505915fd-d133-4f88-b157-92468f4142fb" Description="Description for UPM_IPS.RGRLLCAMSProyectoMDD.Item.Type" Name="Type" DisplayName="Type">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
       </Properties>
     </DomainClass>
     <DomainClass Id="fc724694-3a81-43a0-8b95-c78accbcb637" Description="Description for UPM_IPS.RGRLLCAMSProyectoMDD.End" Name="End" DisplayName="End" Namespace="UPM_IPS.RGRLLCAMSProyectoMDD">
@@ -455,6 +460,9 @@
           </XmlPropertyData>
           <XmlPropertyData XmlName="name">
             <DomainPropertyMoniker Name="Item/Name" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="type">
+            <DomainPropertyMoniker Name="Item/Type" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>

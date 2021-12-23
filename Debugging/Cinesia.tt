@@ -19,42 +19,24 @@
 			foreach(Menu menu in window.Menu)
 				foreach(Item item in menu.Item)
 					declareItem(item.Name);
-			foreach(Window sWindow in ((MainWindow)window).SecondaryWindow)
+/*			foreach(Window sWindow in ((MainWindow)window).SecondaryWindow)
 				foreach(Menu menu in sWindow.Menu)
 					foreach(Item item in menu.Item)
 						declareItem(item.Name);
+*/
 			WriteLine("");
 			foreach(Button button in window.Button)
-				declareButton(button.Title, button.id);
-			foreach(Window sWindow in ((MainWindow)window).SecondaryWindow)
-			{
-				foreach(Button button in window.Button)
+				declareButton(button);
+/*			foreach(Window sWindow in ((MainWindow)window).SecondaryWindow)
+				foreach(Button button in sWindow.Button)
 					declareButton(button.Title, button.id);
-					
+*/
+			WriteLine("");
+			frameConstructor("MainW", window);
+			setActionPerformed(window);
+			WriteLine("}");
 		}
 	}
-/*	WriteLine("*****************************************************************\n");
-	pProperties("FrameW_Window");
-	pConstructor("FrameW_Window");
-	if (countWindow() == 0)
-		WriteLine("Empty Solution. No existing Window");
-	else
-	{
-		int mW = countMainWindow();
-		if (mW > 0)
-		{
-			WriteLine("There has been " + mW + "Windows configured as MainWindow");
-			reportMainWindow();
-		}
-		int	sW = countSecondaryWindow();
-		if (sW > 0)
-		{
-			WriteLine("There has been " + sW + "Windows configured as SecondaryWindow");
-			reportSecondaryWindow();
-		}
-
-	}
-	*/
 	fileManager.Process();
 #>
 
@@ -76,7 +58,7 @@
 	{
 		WriteLine("import java.awt.*;\n" +
 			"import java.awt.event.*;\n\n" +
-			"public class\tFrame" + name + "extends Frame implements ActionListener\n{\n"
+			"public class\tFrame" + name + " extends Frame implements ActionListener\n{\n"
 			);
 	}
 #>
@@ -96,8 +78,92 @@
 #>
 
 <#+
-	private	void	declareButton(string name, int id)
+	private	void	declareButton(Button button)
 	{
-		WriteLine("\tprivate Button\tbutton" + name + id + ";");
+		WriteLine("\tprivate Button\t\tbutton" + button.Title + ";");
+	}
+#>
+
+<#+
+	private void	frameConstructor(string name, Window window)
+	{
+		WriteLine("\tpublic Frame" + name + "()\n\t{");
+		WriteLine("\t\tsuper();\n");
+		WriteLine("\t\tthis.setTitle(\"Frame" + name + "\");\n");
+			foreach(Window sWindow in ((MainWindow)window).SecondaryWindow)
+				WriteLine("\t\twindow" + sWindow.Name + " = new Dialog" + sWindow.Name + "(this, true);");
+		WriteLine("\n\t\tthis.setLayout(new FlowLayout());\n");
+		WriteLine("\t\tMenuBar MB = new MenuBar();\n\t\tthis.setMenuBar(MB);\n");
+		foreach(Menu menu in window.Menu)
+		{
+			createMenu(menu);
+			WriteLine("\t\tMB.add(menu" + menu.Name + ");\n");
+		}
+/*		
+			foreach(Window sWindow in ((MainWindow)window).SecondaryWindow)
+			foreach(Menu menu in ((Window)sWindow).Menu)
+			{
+				createMenu(menu);
+				WriteLine("\t\tMB.add(menu" + menu.Name + ");\n");
+			}
+*/
+		WriteLine("");
+		foreach(Button button in window.Button)
+			createButton(button);
+		WriteLine("");
+		foreach(Button button in window.Button)
+			actionButton(button);
+		foreach(Menu menu in window.Menu)
+			foreach(Item item in menu.Item)
+				actionItem(item);
+		WriteLine("");
+		WriteLine("\n\t\tthis.setSize(" + window.SizeX + ", " + window.SizeY + ");\n\t\tthis.setVisible(true);\n\t}\n");
+	}
+#>
+
+<#+
+	private void	createMenu(Menu menu)
+	{
+		WriteLine("\t\tMenu menu" + menu.Name + " = new Menu(\"" + menu.Name + "\");");
+		foreach(Item item in menu.Item)
+		{
+			WriteLine("\t\titem" + item.Name + " = new MenuItem(\"" + item.Name +"\");");
+			WriteLine("\t\tmenu" + menu.Name + ".add(item" + item.Name + ");");
+		}
+	}
+#>
+
+<#+
+	private void	createButton(Button button)
+	{
+		WriteLine("\t\tbutton" + button.Title + " = new Button(\"" + button.Title + "\");");
+		WriteLine("\t\tthis.add(button" + button.Title + ");");
+	}
+#>
+
+<#+
+	private void	actionButton(Button button)
+	{
+		WriteLine("\t\tbutton" + button.Title + ".addActionListener(this);");
+	}
+#>
+
+<#+
+	private void	actionItem(Item item)
+	{
+		WriteLine("\t\titem" + item.Name + ".addActionListener(this);");
+	}
+#>
+
+<#+
+	private void	setActionPerformed(Window window)
+	{
+		WriteLine("\tpublic void\tactionPerformed(ActionEvent ae)\n\t{\n\t\tObject o = ae.getSource();\n");
+		WriteLine("\t\tif (o == buttonSalir)\n\t\t\tSystem.exit(0);")
+		foreach(Menu menu in window.Menu)
+			foreach(Item item in menu.Item)
+			{
+				if(item.Name)
+			}
 	}
 #>
