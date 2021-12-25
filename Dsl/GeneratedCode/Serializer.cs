@@ -4261,6 +4261,23 @@ namespace UPM_IPS.RGRLLCAMSProyectoMDD
 					}
 				}
 			}
+			// Type
+			if (!serializationContext.Result.Failed)
+			{
+				string attribType = RGRLLCAMSProyectoMDDSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "type");
+				if (attribType != null)
+				{
+					global::System.String valueOfType;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribType, out valueOfType))
+					{
+						instanceOfButton.Type = valueOfType;
+					}
+					else
+					{	// Invalid property value, ignored.
+						RGRLLCAMSProyectoMDDSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "type", typeof(global::System.String), attribType);
+					}
+				}
+			}
 		}
 	
 		/// <summary>
@@ -4704,6 +4721,17 @@ namespace UPM_IPS.RGRLLCAMSProyectoMDD
 				{
 					if (!string.IsNullOrEmpty(propValue))
 						RGRLLCAMSProyectoMDDSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "title", propValue);
+	
+				}
+			}
+			// Type
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfButton.Type;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						RGRLLCAMSProyectoMDDSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "type", propValue);
 	
 				}
 			}

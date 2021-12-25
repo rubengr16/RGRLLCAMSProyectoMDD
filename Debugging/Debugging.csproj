@@ -64,6 +64,9 @@
     <Service Include="{508349B6-6B84-4df5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Canc.java">
+      <DependentUpon>Cinesia.tt</DependentUpon>
+    </Content>
     <Content Include="Cinesia.java">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -73,10 +76,19 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Cinesia.java</LastGenOutput>
     </Content>
-    <Content Include="CINESIAMainW.java">
+    <Content Include="City.java">
+      <DependentUpon>Cinesia.tt</DependentUpon>
+    </Content>
+    <Content Include="Film.java">
       <DependentUpon>Cinesia.tt</DependentUpon>
     </Content>
     <Content Include="Main.java">
+      <DependentUpon>Cinesia.tt</DependentUpon>
+    </Content>
+    <Content Include="Seat.java">
+      <DependentUpon>Cinesia.tt</DependentUpon>
+    </Content>
+    <Content Include="Time.java">
       <DependentUpon>Cinesia.tt</DependentUpon>
     </Content>
   </ItemGroup>

@@ -304,6 +304,8 @@
         <xsd:attribute name="id" type="xsd:string" />
         <!-- Property: Title -->
         <xsd:attribute name="title" type="xsd:string" />
+        <!-- Property: Type -->
+        <xsd:attribute name="type" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

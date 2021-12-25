@@ -11,31 +11,41 @@
 	{
 		if (window is MainWindow)
 		{
-			fileManager.StartNewFile(window.Name + "MainW" + ".java");
-			setClassHeader("MainW");
+			fileManager.StartNewFile(window.Name + ".java");
+			setClassHeader(window.Name, "Frame");
 			foreach(Window sWindow in ((MainWindow)window).SecondaryWindow)
 				declareWindowD(sWindow.Name);
 			WriteLine("");
 			foreach(Menu menu in window.Menu)
 				foreach(Item item in menu.Item)
 					declareItem(item.Name);
-/*			foreach(Window sWindow in ((MainWindow)window).SecondaryWindow)
-				foreach(Menu menu in sWindow.Menu)
-					foreach(Item item in menu.Item)
-						declareItem(item.Name);
-*/
 			WriteLine("");
 			foreach(Button button in window.Button)
 				declareButton(button);
-/*			foreach(Window sWindow in ((MainWindow)window).SecondaryWindow)
-				foreach(Button button in sWindow.Button)
-					declareButton(button.Title, button.id);
-*/
 			WriteLine("");
-			frameConstructor("MainW", window);
+			constructor(window.Name, "Frame", window);
 			setActionPerformed(window);
 			WriteLine("}");
 		}
+		else
+		{
+			fileManager.StartNewFile(window.Name + ".java");
+			setClassHeader(window.Name, "Dialog");
+			foreach(Window sWindow in ((SecondaryWindow)window).TargetSecondaryWindow)
+				declareWindowD(sWindow.Name);
+			WriteLine("");
+			foreach(Menu menu in window.Menu)
+				foreach(Item item in menu.Item)
+					declareItem(item.Name);
+			WriteLine("");
+			foreach(Button button in window.Button)
+				declareButton(button);
+			WriteLine("");
+			constructor(window.Name, "Dialog", window);
+			setActionPerformed(window);
+			WriteLine("}");
+		}
+
 	}
 	fileManager.Process();
 #>
@@ -54,11 +64,11 @@
 #>
 
 <#+
-	private void	setClassHeader(string name)
+	private void	setClassHeader(string name, string type)
 	{
 		WriteLine("import java.awt.*;\n" +
 			"import java.awt.event.*;\n\n" +
-			"public class\tFrame" + name + " extends Frame implements ActionListener\n{\n"
+			"public class\t" + type + name + " extends " + type + " implements ActionListener\n{\n"
 			);
 	}
 #>
@@ -85,12 +95,22 @@
 #>
 
 <#+
-	private void	frameConstructor(string name, Window window)
+	private void	constructor(string name, string type, Window window)
 	{
-		WriteLine("\tpublic Frame" + name + "()\n\t{");
-		WriteLine("\t\tsuper();\n");
-		WriteLine("\t\tthis.setTitle(\"Frame" + name + "\");\n");
+		Write("\tpublic " + type + name + "(");
+		if (String.Equals(type, "Dialog"))
+			Write("Frame parent, boolean modal");
+		WriteLine(")\n\t{");
+		Write("\t\tsuper(");
+		if (String.Equals(type, "Dialog"))
+			Write("parent, \"" + type + name + "\", modal");
+		WriteLine(");\n");
+		WriteLine("\t\tthis.setTitle(\"" + type + name + "\");\n");
+		if (window is MainWindow)
 			foreach(Window sWindow in ((MainWindow)window).SecondaryWindow)
+				WriteLine("\t\twindow" + sWindow.Name + " = new Dialog" + sWindow.Name + "(this, true);");
+		else
+			foreach(Window sWindow in ((SecondaryWindow)window).TargetSecondaryWindow)
 				WriteLine("\t\twindow" + sWindow.Name + " = new Dialog" + sWindow.Name + "(this, true);");
 		WriteLine("\n\t\tthis.setLayout(new FlowLayout());\n");
 		WriteLine("\t\tMenuBar MB = new MenuBar();\n\t\tthis.setMenuBar(MB);\n");
@@ -99,14 +119,6 @@
 			createMenu(menu);
 			WriteLine("\t\tMB.add(menu" + menu.Name + ");\n");
 		}
-/*		
-			foreach(Window sWindow in ((MainWindow)window).SecondaryWindow)
-			foreach(Menu menu in ((Window)sWindow).Menu)
-			{
-				createMenu(menu);
-				WriteLine("\t\tMB.add(menu" + menu.Name + ");\n");
-			}
-*/
 		WriteLine("");
 		foreach(Button button in window.Button)
 			createButton(button);
@@ -158,12 +170,60 @@
 <#+
 	private void	setActionPerformed(Window window)
 	{
+		bool	i;
+		Window	aux;
+
+		i = false;
 		WriteLine("\tpublic void\tactionPerformed(ActionEvent ae)\n\t{\n\t\tObject o = ae.getSource();\n");
-		WriteLine("\t\tif (o == buttonSalir)\n\t\t\tSystem.exit(0);")
 		foreach(Menu menu in window.Menu)
 			foreach(Item item in menu.Item)
 			{
-				if(item.Name)
+				if (String.Equals(item.Type, "End"))
+					WriteLine("\t\tif (o == item" + item.Name + ")\n\t\t\tSystem.exit(0);");
+				else if (item.Type != "")
+				{
+					if (i)
+						Write("\t\telse ");
+					else
+					{
+						Write("\t\t");
+						i = true;
+					}
+					WriteLine("if (o == item" + item.Name + ")\n\t\t\twindow" + item.Type + ".setVisible(true);");
+				}
 			}
+		foreach(Button button in window.Button)
+		{
+			if (String.Equals(button.Type, "End"))
+			{
+				if (i)
+					Write("\t\telse ");
+				else
+				{
+					Write("\t\t");
+					i = true;
+				}
+				WriteLine("if (o == button" + button.Title + ")\n\t\t\tSystem.exit(0);");
+			}
+			else if(button.Type != "")
+			{
+				if (i)
+					Write("\t\telse ");
+				else
+				{
+					Write("\t\t");
+					i = true;
+				}
+				if (String.Equals(button.Type, "Prev")) // THERE WILL BE PROBLEMS!!!!
+				{
+					while
+					
+
+				}
+				else
+					WriteLine("if (o == item" + button.Title + ")\n\t\t\twindow" + button.Type + ".setVisible(true);");
+			}
+		}
+		WriteLine("\t}");
 	}
 #>

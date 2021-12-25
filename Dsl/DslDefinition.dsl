@@ -116,6 +116,11 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="002444a6-7417-43b7-9c81-58ddefaf0ec6" Description="Description for UPM_IPS.RGRLLCAMSProyectoMDD.Button.Type" Name="Type" DisplayName="Type">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
       </Properties>
     </DomainClass>
     <DomainClass Id="f088807a-4f48-4879-bed0-ae3bb2503a76" Description="Description for UPM_IPS.RGRLLCAMSProyectoMDD.Item" Name="Item" DisplayName="Item" Namespace="UPM_IPS.RGRLLCAMSProyectoMDD">
@@ -443,6 +448,9 @@
           </XmlPropertyData>
           <XmlPropertyData XmlName="title">
             <DomainPropertyMoniker Name="Button/Title" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="type">
+            <DomainPropertyMoniker Name="Button/Type" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
