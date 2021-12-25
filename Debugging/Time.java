@@ -11,7 +11,7 @@ public class	DialogTime extends Dialog implements ActionListener
 	private MenuItem	item19;
 	private MenuItem	item22;
 
-	private Button		buttonAtrás;
+	private Button		buttonAnterior;
 	private Button		buttonSalir;
 
 	public DialogTime(Frame parent, boolean modal)
@@ -21,6 +21,7 @@ public class	DialogTime extends Dialog implements ActionListener
 		this.setTitle("DialogTime");
 
 		windowSeat = new DialogSeat(this, true);
+		windowCity = new DialogCity(this, true);
 
 		this.setLayout(new FlowLayout());
 
@@ -39,12 +40,12 @@ public class	DialogTime extends Dialog implements ActionListener
 		MB.add(menuSession);
 
 
-		buttonAtrás = new Button("Atrás");
-		this.add(buttonAtrás);
+		buttonAnterior = new Button("Anterior");
+		this.add(buttonAnterior);
 		buttonSalir = new Button("Salir");
 		this.add(buttonSalir);
 
-		buttonAtrás.addActionListener(this);
+		buttonAnterior.addActionListener(this);
 		buttonSalir.addActionListener(this);
 		item14.addActionListener(this);
 		item17.addActionListener(this);
@@ -68,7 +69,8 @@ public class	DialogTime extends Dialog implements ActionListener
 			windowTime.setVisible(true);
 		else if (o == item22)
 			windowTime.setVisible(true);
-		else SHITY THINGS
+		else if (o == buttonAnterior)
+			windowCity.setVisible(true);
 		else if (o == buttonSalir)
 			System.exit(0);
 	}

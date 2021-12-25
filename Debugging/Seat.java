@@ -22,7 +22,7 @@ public class	DialogSeat extends Dialog implements ActionListener
 	private MenuItem	item43;
 	private MenuItem	item23;
 
-	private Button		buttonAtrás;
+	private Button		buttonAnterior;
 	private Button		buttonSalir;
 
 	public DialogSeat(Frame parent, boolean modal)
@@ -31,6 +31,7 @@ public class	DialogSeat extends Dialog implements ActionListener
 
 		this.setTitle("DialogSeat");
 
+		windowCity = new DialogCity(this, true);
 
 		this.setLayout(new FlowLayout());
 
@@ -73,12 +74,12 @@ public class	DialogSeat extends Dialog implements ActionListener
 		MB.add(menu);
 
 
-		buttonAtrás = new Button("Atrás");
-		this.add(buttonAtrás);
+		buttonAnterior = new Button("Anterior");
+		this.add(buttonAnterior);
 		buttonSalir = new Button("Salir");
 		this.add(buttonSalir);
 
-		buttonAtrás.addActionListener(this);
+		buttonAnterior.addActionListener(this);
 		buttonSalir.addActionListener(this);
 		item21.addActionListener(this);
 		item22.addActionListener(this);
@@ -138,7 +139,8 @@ public class	DialogSeat extends Dialog implements ActionListener
 			System.exit(0);
 		if (o == item23)
 			System.exit(0);
-		SHITY THINGS
+		if (o == buttonAnterior)
+			windowCity.setVisible(true);
 		else if (o == buttonSalir)
 			System.exit(0);
 	}

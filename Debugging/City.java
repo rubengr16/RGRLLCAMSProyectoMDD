@@ -13,7 +13,7 @@ public class	DialogCity extends Dialog implements ActionListener
 	private MenuItem	itemYelmo;
 	private MenuItem	itemSinFin;
 
-	private Button		buttonAtrás;
+	private Button		buttonAnterior;
 	private Button		buttonSalir;
 
 	public DialogCity(Frame parent, boolean modal)
@@ -23,6 +23,7 @@ public class	DialogCity extends Dialog implements ActionListener
 		this.setTitle("DialogCity");
 
 		windowFilm = new DialogFilm(this, true);
+		windowCINESIA = new DialogCINESIA(this, true);
 
 		this.setLayout(new FlowLayout());
 
@@ -48,12 +49,12 @@ public class	DialogCity extends Dialog implements ActionListener
 		MB.add(menuCinema);
 
 
-		buttonAtrás = new Button("Atrás");
-		this.add(buttonAtrás);
+		buttonAnterior = new Button("Anterior");
+		this.add(buttonAnterior);
 		buttonSalir = new Button("Salir");
 		this.add(buttonSalir);
 
-		buttonAtrás.addActionListener(this);
+		buttonAnterior.addActionListener(this);
 		buttonSalir.addActionListener(this);
 		itemMadrid.addActionListener(this);
 		itemBarcelona.addActionListener(this);
@@ -77,7 +78,8 @@ public class	DialogCity extends Dialog implements ActionListener
 			windowFilm.setVisible(true);
 		else if (o == itemSinFin)
 			windowFilm.setVisible(true);
-		else SHITY THINGS
+		else if (o == buttonAnterior)
+			windowCINESIA.setVisible(true);
 		else if (o == buttonSalir)
 			System.exit(0);
 	}

@@ -12,7 +12,7 @@ public class	DialogFilm extends Dialog implements ActionListener
 	private MenuItem	itemRobot;
 	private MenuItem	itemIPS;
 
-	private Button		buttonAtrás;
+	private Button		buttonAnterior;
 	private Button		buttonSalir;
 
 	public DialogFilm(Frame parent, boolean modal)
@@ -22,6 +22,7 @@ public class	DialogFilm extends Dialog implements ActionListener
 		this.setTitle("DialogFilm");
 
 		windowTime = new DialogTime(this, true);
+		windowCity = new DialogCity(this, true);
 
 		this.setLayout(new FlowLayout());
 
@@ -42,12 +43,12 @@ public class	DialogFilm extends Dialog implements ActionListener
 		MB.add(menuFilm);
 
 
-		buttonAtrás = new Button("Atrás");
-		this.add(buttonAtrás);
+		buttonAnterior = new Button("Anterior");
+		this.add(buttonAnterior);
 		buttonSalir = new Button("Salir");
 		this.add(buttonSalir);
 
-		buttonAtrás.addActionListener(this);
+		buttonAnterior.addActionListener(this);
 		buttonSalir.addActionListener(this);
 		itemDanger.addActionListener(this);
 		itemPlanet.addActionListener(this);
@@ -74,7 +75,8 @@ public class	DialogFilm extends Dialog implements ActionListener
 			windowTime.setVisible(true);
 		else if (o == itemIPS)
 			windowTime.setVisible(true);
-		else SHITY THINGS
+		else if (o == buttonAnterior)
+			windowCity.setVisible(true);
 		else if (o == buttonSalir)
 			System.exit(0);
 	}

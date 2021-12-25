@@ -8,7 +8,7 @@ public class	DialogCanc extends Dialog implements ActionListener
 	private MenuItem	itemAC;
 	private MenuItem	itemRC;
 
-	private Button		buttonAtrás;
+	private Button		buttonAnterior;
 	private Button		buttonSalir;
 
 	public DialogCanc(Frame parent, boolean modal)
@@ -17,6 +17,7 @@ public class	DialogCanc extends Dialog implements ActionListener
 
 		this.setTitle("DialogCanc");
 
+		windowCINESIA = new DialogCINESIA(this, true);
 
 		this.setLayout(new FlowLayout());
 
@@ -31,12 +32,12 @@ public class	DialogCanc extends Dialog implements ActionListener
 		MB.add(menuCancel);
 
 
-		buttonAtrás = new Button("Atrás");
-		this.add(buttonAtrás);
+		buttonAnterior = new Button("Anterior");
+		this.add(buttonAnterior);
 		buttonSalir = new Button("Salir");
 		this.add(buttonSalir);
 
-		buttonAtrás.addActionListener(this);
+		buttonAnterior.addActionListener(this);
 		buttonSalir.addActionListener(this);
 		itemAC.addActionListener(this);
 		itemRC.addActionListener(this);
@@ -54,7 +55,9 @@ public class	DialogCanc extends Dialog implements ActionListener
 			System.exit(0);
 		if (o == itemRC)
 			System.exit(0);
-		if (o == buttonSalir)
+		if (o == buttonAnterior)
+			windowCINESIA.setVisible(true);
+		else if (o == buttonSalir)
 			System.exit(0);
 	}
 }

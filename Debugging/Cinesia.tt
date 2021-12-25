@@ -14,7 +14,10 @@
 			fileManager.StartNewFile(window.Name + ".java");
 			setClassHeader(window.Name, "Frame");
 			foreach(Window sWindow in ((MainWindow)window).SecondaryWindow)
-				declareWindowD(sWindow.Name);
+				declareWindow(sWindow.Name);
+			foreach(Button button in window.Button)
+				if (String.Equals(button.Title, "Anterior"))
+					declareWindow(button.Type);
 			WriteLine("");
 			foreach(Menu menu in window.Menu)
 				foreach(Item item in menu.Item)
@@ -32,7 +35,10 @@
 			fileManager.StartNewFile(window.Name + ".java");
 			setClassHeader(window.Name, "Dialog");
 			foreach(Window sWindow in ((SecondaryWindow)window).TargetSecondaryWindow)
-				declareWindowD(sWindow.Name);
+				declareWindow(sWindow.Name);
+			foreach(Button button in window.Button)
+				if (String.Equals(button.Title, "Atrás"))
+					declareWindow(button.Type);
 			WriteLine("");
 			foreach(Menu menu in window.Menu)
 				foreach(Item item in menu.Item)
@@ -74,7 +80,7 @@
 #>
 
 <#+
-	private	void	declareWindowD(string name)
+	private	void	declareWindow(string name)
 	{
 		WriteLine("\tprivate Dialog" + name + "\twindow" + name + ";");
 	}
@@ -112,6 +118,9 @@
 		else
 			foreach(Window sWindow in ((SecondaryWindow)window).TargetSecondaryWindow)
 				WriteLine("\t\twindow" + sWindow.Name + " = new Dialog" + sWindow.Name + "(this, true);");
+		foreach(Button button in window.Button)
+			if (String.Equals(button.Title, "Anterior"))
+				WriteLine("\t\twindow" + button.Type + " = new Dialog" + button.Type + "(this, true);");
 		WriteLine("\n\t\tthis.setLayout(new FlowLayout());\n");
 		WriteLine("\t\tMenuBar MB = new MenuBar();\n\t\tthis.setMenuBar(MB);\n");
 		foreach(Menu menu in window.Menu)
@@ -171,7 +180,6 @@
 	private void	setActionPerformed(Window window)
 	{
 		bool	i;
-		Window	aux;
 
 		i = false;
 		WriteLine("\tpublic void\tactionPerformed(ActionEvent ae)\n\t{\n\t\tObject o = ae.getSource();\n");
@@ -214,14 +222,7 @@
 					Write("\t\t");
 					i = true;
 				}
-				if (String.Equals(button.Type, "Prev")) // THERE WILL BE PROBLEMS!!!!
-				{
-					while
-					
-
-				}
-				else
-					WriteLine("if (o == item" + button.Title + ")\n\t\t\twindow" + button.Type + ".setVisible(true);");
+				WriteLine("if (o == button" + button.Title + ")\n\t\t\twindow" + button.Type + ".setVisible(true);");
 			}
 		}
 		WriteLine("\t}");
