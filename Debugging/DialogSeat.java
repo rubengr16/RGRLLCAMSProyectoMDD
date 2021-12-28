@@ -4,23 +4,24 @@ import java.awt.event.*;
 public class	DialogSeat extends Dialog implements ActionListener
 {
 
+	private DialogCity	windowCity;
 
-	private MenuItem	item21;
-	private MenuItem	item22;
-	private MenuItem	item32;
-	private MenuItem	item41;
-	private MenuItem	item11;
-	private MenuItem	item12;
-	private MenuItem	item31;
-	private MenuItem	item14;
-	private MenuItem	item13;
-	private MenuItem	item42;
-	private MenuItem	item34;
-	private MenuItem	item33;
-	private MenuItem	item24;
-	private MenuItem	item44;
-	private MenuItem	item43;
-	private MenuItem	item23;
+	private Button		item21;
+	private Button		item22;
+	private Button		item32;
+	private Button		item41;
+	private Button		item11;
+	private Button		item12;
+	private Button		item31;
+	private Button		item14;
+	private Button		item13;
+	private Button		item42;
+	private Button		item34;
+	private Button		item33;
+	private Button		item24;
+	private Button		item44;
+	private Button		item43;
+	private Button		item23;
 
 	private Button		buttonAnterior;
 	private Button		buttonSalir;
@@ -31,48 +32,42 @@ public class	DialogSeat extends Dialog implements ActionListener
 
 		this.setTitle("DialogSeat");
 
-		windowCity = new DialogCity(this, true);
+		windowCity = new DialogCity(parent, true);
 
 		this.setLayout(new FlowLayout());
 
-		MenuBar MB = new MenuBar();
-		this.setMenuBar(MB);
-
-		Menu menu = new Menu("");
-		item21 = new MenuItem("21");
-		menu.add(item21);
-		item22 = new MenuItem("22");
-		menu.add(item22);
-		item32 = new MenuItem("32");
-		menu.add(item32);
-		item41 = new MenuItem("41");
-		menu.add(item41);
-		item11 = new MenuItem("11");
-		menu.add(item11);
-		item12 = new MenuItem("12");
-		menu.add(item12);
-		item31 = new MenuItem("31");
-		menu.add(item31);
-		item14 = new MenuItem("14");
-		menu.add(item14);
-		item13 = new MenuItem("13");
-		menu.add(item13);
-		item42 = new MenuItem("42");
-		menu.add(item42);
-		item34 = new MenuItem("34");
-		menu.add(item34);
-		item33 = new MenuItem("33");
-		menu.add(item33);
-		item24 = new MenuItem("24");
-		menu.add(item24);
-		item44 = new MenuItem("44");
-		menu.add(item44);
-		item43 = new MenuItem("43");
-		menu.add(item43);
-		item23 = new MenuItem("23");
-		menu.add(item23);
-		MB.add(menu);
-
+		item21 = new Button("21");
+		this.add(item21);
+		item22 = new Button("22");
+		this.add(item22);
+		item32 = new Button("32");
+		this.add(item32);
+		item41 = new Button("41");
+		this.add(item41);
+		item11 = new Button("11");
+		this.add(item11);
+		item12 = new Button("12");
+		this.add(item12);
+		item31 = new Button("31");
+		this.add(item31);
+		item14 = new Button("14");
+		this.add(item14);
+		item13 = new Button("13");
+		this.add(item13);
+		item42 = new Button("42");
+		this.add(item42);
+		item34 = new Button("34");
+		this.add(item34);
+		item33 = new Button("33");
+		this.add(item33);
+		item24 = new Button("24");
+		this.add(item24);
+		item44 = new Button("44");
+		this.add(item44);
+		item43 = new Button("43");
+		this.add(item43);
+		item23 = new Button("23");
+		this.add(item23);
 
 		buttonAnterior = new Button("Anterior");
 		this.add(buttonAnterior);

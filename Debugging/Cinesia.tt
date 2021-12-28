@@ -5,23 +5,27 @@
  
 <#
 	var	fileManager = EntityFrameworkTemplateFileManager.Create(this);
-	fileManager.StartNewFile("Main.java");
+	fileManager.StartNewFile("Application.java");
 	createMain();
 	foreach(Window window in this.Tapiz.Window)
 	{
 		if (window is MainWindow)
 		{
-			fileManager.StartNewFile(window.Name + ".java");
+			fileManager.StartNewFile("Frame" + window.Name + ".java");
 			setClassHeader(window.Name, "Frame");
 			foreach(Window sWindow in ((MainWindow)window).SecondaryWindow)
 				declareWindow(sWindow.Name);
 			foreach(Button button in window.Button)
-				if (String.Equals(button.Title, "Anterior"))
+			{
+				if (String.Equals(button.Title, "Anterior") && button.id == 0)
+					declareFrame(button.Type);
+				else if (String.Equals(button.Title, "Anterior"))
 					declareWindow(button.Type);
+			}
 			WriteLine("");
 			foreach(Menu menu in window.Menu)
 				foreach(Item item in menu.Item)
-					declareItem(item.Name);
+					declareItem(item.Name, "MenuItem");
 			WriteLine("");
 			foreach(Button button in window.Button)
 				declareButton(button);
@@ -32,17 +36,22 @@
 		}
 		else
 		{
-			fileManager.StartNewFile(window.Name + ".java");
+			fileManager.StartNewFile("Dialog" + window.Name + ".java");
 			setClassHeader(window.Name, "Dialog");
 			foreach(Window sWindow in ((SecondaryWindow)window).TargetSecondaryWindow)
 				declareWindow(sWindow.Name);
 			foreach(Button button in window.Button)
-				if (String.Equals(button.Title, "Atrás"))
+			{
+				if (String.Equals(button.Title, "Anterior") && button.id == 0)
+					declareFrame(button.Type);
+				else if (String.Equals(button.Title, "Anterior"))
 					declareWindow(button.Type);
+
+			}
 			WriteLine("");
 			foreach(Menu menu in window.Menu)
 				foreach(Item item in menu.Item)
-					declareItem(item.Name);
+					declareItem(item.Name, "Button");
 			WriteLine("");
 			foreach(Button button in window.Button)
 				declareButton(button);
@@ -51,19 +60,17 @@
 			setActionPerformed(window);
 			WriteLine("}");
 		}
-
 	}
 	fileManager.Process();
 #>
 
-//Important Functions
 <#+
 	private void	createMain()
 	{
 		WriteLine(
 			"public class \t Application\n{\n" +
 			"\tpublic static void main (String[] args)\n\t{\n" +
-			"\t\tnew Framev_Principal();\n" +
+			"\t\tnew FrameCINESIA();\n" +
 			"\t}\n}\n"
 		);
 	}
@@ -80,6 +87,13 @@
 #>
 
 <#+
+	private	void	declareFrame(string name)
+	{
+		WriteLine("\tprivate Frame" + name + "\tframe" + name + ";");
+	}
+#>
+
+<#+
 	private	void	declareWindow(string name)
 	{
 		WriteLine("\tprivate Dialog" + name + "\twindow" + name + ";");
@@ -87,9 +101,9 @@
 #>
 
 <#+
-	private	void	declareItem(string name)
+	private	void	declareItem(string name, string type)
 	{
-		WriteLine("\tprivate MenuItem\titem" + name + ";");
+		WriteLine("\tprivate " + type + "\t\titem" + name + ";");
 	}
 #>
 
@@ -117,17 +131,28 @@
 				WriteLine("\t\twindow" + sWindow.Name + " = new Dialog" + sWindow.Name + "(this, true);");
 		else
 			foreach(Window sWindow in ((SecondaryWindow)window).TargetSecondaryWindow)
-				WriteLine("\t\twindow" + sWindow.Name + " = new Dialog" + sWindow.Name + "(this, true);");
+				WriteLine("\t\twindow" + sWindow.Name + " = new Dialog" + sWindow.Name + "(parent, true);");
 		foreach(Button button in window.Button)
-			if (String.Equals(button.Title, "Anterior"))
-				WriteLine("\t\twindow" + button.Type + " = new Dialog" + button.Type + "(this, true);");
-		WriteLine("\n\t\tthis.setLayout(new FlowLayout());\n");
-		WriteLine("\t\tMenuBar MB = new MenuBar();\n\t\tthis.setMenuBar(MB);\n");
-		foreach(Menu menu in window.Menu)
 		{
-			createMenu(menu);
-			WriteLine("\t\tMB.add(menu" + menu.Name + ");\n");
+			if (String.Equals(button.Title, "Anterior") && button.id == 0)
+				WriteLine("\t\tframe" + button.Type + " = new Frame" + button.Type + "();");	
+			else if (String.Equals(button.Title, "Anterior"))
+				WriteLine("\t\twindow" + button.Type + " = new Dialog" + button.Type + "(parent, true);");
 		}
+		WriteLine("\n\t\tthis.setLayout(new FlowLayout());\n");
+		if (String.Equals(type, "Frame"))
+		{
+			WriteLine("\t\tMenuBar MB = new MenuBar();\n\t\tthis.setMenuBar(MB);\n");
+			foreach(Menu menu in window.Menu)
+			{
+				createMenu(menu);
+				WriteLine("\t\tMB.add(menu" + menu.Name + ");\n");
+			}
+		}
+		else
+			foreach(Menu menu in window.Menu)
+				foreach(Item item in menu.Item)
+					createButton(item);
 		WriteLine("");
 		foreach(Button button in window.Button)
 			createButton(button);
@@ -151,6 +176,14 @@
 			WriteLine("\t\titem" + item.Name + " = new MenuItem(\"" + item.Name +"\");");
 			WriteLine("\t\tmenu" + menu.Name + ".add(item" + item.Name + ");");
 		}
+	}
+#>
+
+<#+
+	private void	createButton(Item button)
+	{
+		WriteLine("\t\titem" + button.Name + " = new Button(\"" + button.Name + "\");");
+		WriteLine("\t\tthis.add(item" + button.Name + ");");
 	}
 #>
 
@@ -222,7 +255,10 @@
 					Write("\t\t");
 					i = true;
 				}
-				WriteLine("if (o == button" + button.Title + ")\n\t\t\twindow" + button.Type + ".setVisible(true);");
+				if (button.id == 0)
+					WriteLine("if (o == button" + button.Title + ")\n\t\t\tframe" + button.Type + ".setVisible(true);");
+				else
+					WriteLine("if (o == button" + button.Title + ")\n\t\t\twindow" + button.Type + ".setVisible(true);");
 			}
 		}
 		WriteLine("\t}");

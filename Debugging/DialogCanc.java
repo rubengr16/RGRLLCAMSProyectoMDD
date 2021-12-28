@@ -4,9 +4,10 @@ import java.awt.event.*;
 public class	DialogCanc extends Dialog implements ActionListener
 {
 
+	private FrameCINESIA	frameCINESIA;
 
-	private MenuItem	itemAC;
-	private MenuItem	itemRC;
+	private Button		itemAC;
+	private Button		itemRC;
 
 	private Button		buttonAnterior;
 	private Button		buttonSalir;
@@ -17,20 +18,14 @@ public class	DialogCanc extends Dialog implements ActionListener
 
 		this.setTitle("DialogCanc");
 
-		windowCINESIA = new DialogCINESIA(this, true);
+		frameCINESIA = new FrameCINESIA();
 
 		this.setLayout(new FlowLayout());
 
-		MenuBar MB = new MenuBar();
-		this.setMenuBar(MB);
-
-		Menu menuCancel = new Menu("Cancel");
-		itemAC = new MenuItem("AC");
-		menuCancel.add(itemAC);
-		itemRC = new MenuItem("RC");
-		menuCancel.add(itemRC);
-		MB.add(menuCancel);
-
+		itemAC = new Button("AC");
+		this.add(itemAC);
+		itemRC = new Button("RC");
+		this.add(itemRC);
 
 		buttonAnterior = new Button("Anterior");
 		this.add(buttonAnterior);
@@ -56,7 +51,7 @@ public class	DialogCanc extends Dialog implements ActionListener
 		if (o == itemRC)
 			System.exit(0);
 		if (o == buttonAnterior)
-			windowCINESIA.setVisible(true);
+			frameCINESIA.setVisible(true);
 		else if (o == buttonSalir)
 			System.exit(0);
 	}

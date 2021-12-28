@@ -5,11 +5,12 @@ public class	DialogTime extends Dialog implements ActionListener
 {
 
 	private DialogSeat	windowSeat;
+	private DialogCity	windowCity;
 
-	private MenuItem	item14;
-	private MenuItem	item17;
-	private MenuItem	item19;
-	private MenuItem	item22;
+	private Button		item14;
+	private Button		item17;
+	private Button		item19;
+	private Button		item22;
 
 	private Button		buttonAnterior;
 	private Button		buttonSalir;
@@ -20,25 +21,19 @@ public class	DialogTime extends Dialog implements ActionListener
 
 		this.setTitle("DialogTime");
 
-		windowSeat = new DialogSeat(this, true);
-		windowCity = new DialogCity(this, true);
+		windowSeat = new DialogSeat(parent, true);
+		windowCity = new DialogCity(parent, true);
 
 		this.setLayout(new FlowLayout());
 
-		MenuBar MB = new MenuBar();
-		this.setMenuBar(MB);
-
-		Menu menuSession = new Menu("Session");
-		item14 = new MenuItem("14");
-		menuSession.add(item14);
-		item17 = new MenuItem("17");
-		menuSession.add(item17);
-		item19 = new MenuItem("19");
-		menuSession.add(item19);
-		item22 = new MenuItem("22");
-		menuSession.add(item22);
-		MB.add(menuSession);
-
+		item14 = new Button("14");
+		this.add(item14);
+		item17 = new Button("17");
+		this.add(item17);
+		item19 = new Button("19");
+		this.add(item19);
+		item22 = new Button("22");
+		this.add(item22);
 
 		buttonAnterior = new Button("Anterior");
 		this.add(buttonAnterior);
@@ -62,13 +57,13 @@ public class	DialogTime extends Dialog implements ActionListener
 		Object o = ae.getSource();
 
 		if (o == item14)
-			windowTime.setVisible(true);
+			windowSeat.setVisible(true);
 		else if (o == item17)
-			windowTime.setVisible(true);
+			windowSeat.setVisible(true);
 		else if (o == item19)
-			windowTime.setVisible(true);
+			windowSeat.setVisible(true);
 		else if (o == item22)
-			windowTime.setVisible(true);
+			windowSeat.setVisible(true);
 		else if (o == buttonAnterior)
 			windowCity.setVisible(true);
 		else if (o == buttonSalir)

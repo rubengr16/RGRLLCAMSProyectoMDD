@@ -5,13 +5,14 @@ public class	DialogCity extends Dialog implements ActionListener
 {
 
 	private DialogFilm	windowFilm;
+	private FrameCINESIA	frameCINESIA;
 
-	private MenuItem	itemMadrid;
-	private MenuItem	itemBarcelona;
-	private MenuItem	itemSevilla;
-	private MenuItem	itemCinesa;
-	private MenuItem	itemYelmo;
-	private MenuItem	itemSinFin;
+	private Button		itemMadrid;
+	private Button		itemBarcelona;
+	private Button		itemSevilla;
+	private Button		itemCinesa;
+	private Button		itemYelmo;
+	private Button		itemSinFin;
 
 	private Button		buttonAnterior;
 	private Button		buttonSalir;
@@ -22,32 +23,23 @@ public class	DialogCity extends Dialog implements ActionListener
 
 		this.setTitle("DialogCity");
 
-		windowFilm = new DialogFilm(this, true);
-		windowCINESIA = new DialogCINESIA(this, true);
+		windowFilm = new DialogFilm(parent, true);
+		frameCINESIA = new FrameCINESIA();
 
 		this.setLayout(new FlowLayout());
 
-		MenuBar MB = new MenuBar();
-		this.setMenuBar(MB);
-
-		Menu menuTown = new Menu("Town");
-		itemMadrid = new MenuItem("Madrid");
-		menuTown.add(itemMadrid);
-		itemBarcelona = new MenuItem("Barcelona");
-		menuTown.add(itemBarcelona);
-		itemSevilla = new MenuItem("Sevilla");
-		menuTown.add(itemSevilla);
-		MB.add(menuTown);
-
-		Menu menuCinema = new Menu("Cinema");
-		itemCinesa = new MenuItem("Cinesa");
-		menuCinema.add(itemCinesa);
-		itemYelmo = new MenuItem("Yelmo");
-		menuCinema.add(itemYelmo);
-		itemSinFin = new MenuItem("SinFin");
-		menuCinema.add(itemSinFin);
-		MB.add(menuCinema);
-
+		itemMadrid = new Button("Madrid");
+		this.add(itemMadrid);
+		itemBarcelona = new Button("Barcelona");
+		this.add(itemBarcelona);
+		itemSevilla = new Button("Sevilla");
+		this.add(itemSevilla);
+		itemCinesa = new Button("Cinesa");
+		this.add(itemCinesa);
+		itemYelmo = new Button("Yelmo");
+		this.add(itemYelmo);
+		itemSinFin = new Button("SinFin");
+		this.add(itemSinFin);
 
 		buttonAnterior = new Button("Anterior");
 		this.add(buttonAnterior);
@@ -79,7 +71,7 @@ public class	DialogCity extends Dialog implements ActionListener
 		else if (o == itemSinFin)
 			windowFilm.setVisible(true);
 		else if (o == buttonAnterior)
-			windowCINESIA.setVisible(true);
+			frameCINESIA.setVisible(true);
 		else if (o == buttonSalir)
 			System.exit(0);
 	}

@@ -64,7 +64,7 @@
     <Service Include="{508349B6-6B84-4df5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Canc.java">
+    <Content Include="Application.java">
       <DependentUpon>Cinesia.tt</DependentUpon>
     </Content>
     <Content Include="Cinesia.java">
@@ -76,19 +76,22 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Cinesia.java</LastGenOutput>
     </Content>
-    <Content Include="City.java">
+    <Content Include="DialogCanc.java">
       <DependentUpon>Cinesia.tt</DependentUpon>
     </Content>
-    <Content Include="Film.java">
+    <Content Include="DialogCity.java">
       <DependentUpon>Cinesia.tt</DependentUpon>
     </Content>
-    <Content Include="Main.java">
+    <Content Include="DialogFilm.java">
       <DependentUpon>Cinesia.tt</DependentUpon>
     </Content>
-    <Content Include="Seat.java">
+    <Content Include="DialogSeat.java">
       <DependentUpon>Cinesia.tt</DependentUpon>
     </Content>
-    <Content Include="Time.java">
+    <Content Include="DialogTime.java">
+      <DependentUpon>Cinesia.tt</DependentUpon>
+    </Content>
+    <Content Include="FrameCINESIA.java">
       <DependentUpon>Cinesia.tt</DependentUpon>
     </Content>
   </ItemGroup>

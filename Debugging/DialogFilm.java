@@ -5,12 +5,13 @@ public class	DialogFilm extends Dialog implements ActionListener
 {
 
 	private DialogTime	windowTime;
+	private DialogCity	windowCity;
 
-	private MenuItem	itemDanger;
-	private MenuItem	itemPlanet;
-	private MenuItem	itemMision;
-	private MenuItem	itemRobot;
-	private MenuItem	itemIPS;
+	private Button		itemDanger;
+	private Button		itemPlanet;
+	private Button		itemMision;
+	private Button		itemRobot;
+	private Button		itemIPS;
 
 	private Button		buttonAnterior;
 	private Button		buttonSalir;
@@ -21,27 +22,21 @@ public class	DialogFilm extends Dialog implements ActionListener
 
 		this.setTitle("DialogFilm");
 
-		windowTime = new DialogTime(this, true);
-		windowCity = new DialogCity(this, true);
+		windowTime = new DialogTime(parent, true);
+		windowCity = new DialogCity(parent, true);
 
 		this.setLayout(new FlowLayout());
 
-		MenuBar MB = new MenuBar();
-		this.setMenuBar(MB);
-
-		Menu menuFilm = new Menu("Film");
-		itemDanger = new MenuItem("Danger");
-		menuFilm.add(itemDanger);
-		itemPlanet = new MenuItem("Planet");
-		menuFilm.add(itemPlanet);
-		itemMision = new MenuItem("Mision");
-		menuFilm.add(itemMision);
-		itemRobot = new MenuItem("Robot");
-		menuFilm.add(itemRobot);
-		itemIPS = new MenuItem("IPS");
-		menuFilm.add(itemIPS);
-		MB.add(menuFilm);
-
+		itemDanger = new Button("Danger");
+		this.add(itemDanger);
+		itemPlanet = new Button("Planet");
+		this.add(itemPlanet);
+		itemMision = new Button("Mision");
+		this.add(itemMision);
+		itemRobot = new Button("Robot");
+		this.add(itemRobot);
+		itemIPS = new Button("IPS");
+		this.add(itemIPS);
 
 		buttonAnterior = new Button("Anterior");
 		this.add(buttonAnterior);

@@ -79,16 +79,16 @@
             <menu Id="4bd6dcb3-e66c-450d-8327-0dae11a8f6a1" id="0" title="Seleccione la sesión" name="Session">
               <item>
                 <menuHasItem Id="2fb6ed7f-4776-4ea1-ac87-e1383cb13ba4">
-                  <item Id="1539d343-77b4-4bd2-804a-b24e97bdc4f9" title="14:00" name="14" type="Time" />
+                  <item Id="1539d343-77b4-4bd2-804a-b24e97bdc4f9" title="14:00" name="14" type="Seat" />
                 </menuHasItem>
                 <menuHasItem Id="a3db9cf2-6669-482b-9fed-058ce6cc4c1d">
-                  <item Id="8a981dc7-40ef-4e26-8752-379864dbd507" title="17:00" name="17" type="Time" />
+                  <item Id="8a981dc7-40ef-4e26-8752-379864dbd507" title="17:00" name="17" type="Seat" />
                 </menuHasItem>
                 <menuHasItem Id="84ced397-6e8d-4bfe-9422-4d6e5f2d763a">
-                  <item Id="67674a9f-da57-4af5-9fd3-0b69ccc191b9" title="19:00" name="19" type="Time" />
+                  <item Id="67674a9f-da57-4af5-9fd3-0b69ccc191b9" title="19:00" name="19" type="Seat" />
                 </menuHasItem>
                 <menuHasItem Id="eded47d5-0d1b-4b86-829c-ea6e779b0f75">
-                  <item Id="fe16e9be-6dd1-464f-b23e-c2bb5c299f5f" title="22:00" name="22" type="Time" />
+                  <item Id="fe16e9be-6dd1-464f-b23e-c2bb5c299f5f" title="22:00" name="22" type="Seat" />
                 </menuHasItem>
               </item>
             </menu>
@@ -213,7 +213,7 @@
         </menu>
         <button>
           <windowHasButton Id="8b293577-9ec2-4ecb-a900-365af1ba1073">
-            <button Id="ce79d516-4551-4345-bb5e-b97b73109689" id="1" title="Anterior" type="CINESIA" />
+            <button Id="ce79d516-4551-4345-bb5e-b97b73109689" id="0" title="Anterior" type="CINESIA" />
           </windowHasButton>
           <windowHasButton Id="1a8313bd-a29c-4661-9448-d191d9db5d23">
             <button Id="13d92f1b-ec2e-498d-8891-bd08e2bb447f" id="2" title="Salir" type="End" />
