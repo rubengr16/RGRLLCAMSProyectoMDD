@@ -76,6 +76,15 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Cinesia.java</LastGenOutput>
     </Content>
+    <Content Include="CinesiaHtml.html">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CinesiaHtml.tt</DependentUpon>
+    </Content>
+    <Content Include="CinesiaHtml.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CinesiaHtml.html</LastGenOutput>
+    </Content>
     <Content Include="DialogCanc.java">
       <DependentUpon>Cinesia.tt</DependentUpon>
     </Content>
@@ -93,6 +102,24 @@
     </Content>
     <Content Include="FrameCINESIA.java">
       <DependentUpon>Cinesia.tt</DependentUpon>
+    </Content>
+    <Content Include="PaginaCanc.html">
+      <DependentUpon>CinesiaHtml.tt</DependentUpon>
+    </Content>
+    <Content Include="PaginaCINESIA.html">
+      <DependentUpon>CinesiaHtml.tt</DependentUpon>
+    </Content>
+    <Content Include="PaginaCity.html">
+      <DependentUpon>CinesiaHtml.tt</DependentUpon>
+    </Content>
+    <Content Include="PaginaFilm.html">
+      <DependentUpon>CinesiaHtml.tt</DependentUpon>
+    </Content>
+    <Content Include="PaginaSeat.html">
+      <DependentUpon>CinesiaHtml.tt</DependentUpon>
+    </Content>
+    <Content Include="PaginaTime.html">
+      <DependentUpon>CinesiaHtml.tt</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

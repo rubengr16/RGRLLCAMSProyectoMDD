@@ -1,0 +1,53 @@
+<html>
+<head>
+	<title>PaginaCanc</title>
+	<style>
+		body{font-family:arial;}
+		table{font-size:80%;background:rgb(0,110,110)}
+		p{color:rgb(0,250,250);font:bold; margin-bottom:0px; padding-bottom:0px;}
+		td.menu{background:rgb(0,150,150)}
+		table.menu {
+			font-size:100%;
+			position:absolute;
+			visibility:hidden;
+		}
+	</style>
+	<script type="text/javascript">
+		function showmenu(elmnt)
+		{
+			document.getElementById(elmnt).style.visibility="visible";
+		}
+		function showmenu(elmnt)
+		{
+			document.getElementById(elmnt).style.visibility="hidden";
+		}
+	</script>
+</head>
+
+<body>
+<table width="100">
+	<tr>
+
+	<td onmouseover="showmenu('Seleccione su reserva a cancelar')" onmouseout="hidemenu('Seleccione su reserva a cancelar')">
+		<p>Seleccione su reserva a cancelar</p>
+		<table class="menu" id="Seleccione su reserva a cancelar" width="100%">
+
+		<tr>
+			<td class="menu">
+
+<a href="javascript:alert('Fin de la Aplicacion'); window.close();"> Salir </a>
+		<tr>
+			<td class="menu">
+
+<a href="javascript:alert('Fin de la Aplicacion'); window.close();"> Salir </a>
+		</table>
+			</td>		</tr>
+	</table>
+
+	<br>
+	<br>
+	<br>
+<button onclick="javascript:document.location='PaginaCINESIA'"> CINESIA </button>
+<button onclick="javascript:alert('Fin de la Aplicacion'); window.close();"> Salir </button>
+</body>
+</html>
