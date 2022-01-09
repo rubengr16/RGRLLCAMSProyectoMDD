@@ -189,6 +189,14 @@
     <value>Secondary Window</value>
     <comment>DisplayName for DomainClass &apos;SecondaryWindow&apos;</comment>
   </data>
+  <data name="UPM_IPS.RGRLLCAMSProyectoMDD.SecondaryWindow/Type.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.RGRLLCAMSProyectoMDD.SecondaryWindow.Type</value>
+    <comment>Description for DomainProperty &apos;Type&apos; on DomainClass &apos;SecondaryWindow&apos;</comment>
+  </data>
+  <data name="UPM_IPS.RGRLLCAMSProyectoMDD.SecondaryWindow/Type.DisplayName" xml:space="preserve">
+    <value>Type</value>
+    <comment>DisplayName for DomainProperty &apos;Type&apos; on DomainClass &apos;SecondaryWindow&apos;</comment>
+  </data>
   <data name="UPM_IPS.RGRLLCAMSProyectoMDD.Menu.Description" xml:space="preserve">
     <value>Description for UPM_IPS.RGRLLCAMSProyectoMDD.Menu</value>
     <comment>Description for DomainClass &apos;Menu&apos;</comment>

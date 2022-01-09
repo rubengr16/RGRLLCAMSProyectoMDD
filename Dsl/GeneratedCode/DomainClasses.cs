@@ -864,6 +864,93 @@ namespace UPM_IPS.RGRLLCAMSProyectoMDD
 		{
 		}
 		#endregion
+		#region Type domain property code
+		
+		/// <summary>
+		/// Type domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid TypeDomainPropertyId = new global::System.Guid(0xc6665ec2, 0x822e, 0x4f31, 0xb2, 0x6f, 0xd5, 0x77, 0xfb, 0xc2, 0x81, 0xa1);
+		
+		/// <summary>
+		/// Storage for Type
+		/// </summary>
+		private global::System.String typePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Type domain property.
+		/// Description for UPM_IPS.RGRLLCAMSProyectoMDD.SecondaryWindow.Type
+		/// </summary>
+		[DslDesign::DisplayNameResource("UPM_IPS.RGRLLCAMSProyectoMDD.SecondaryWindow/Type.DisplayName", typeof(global::UPM_IPS.RGRLLCAMSProyectoMDD.RGRLLCAMSProyectoMDDDomainModel), "UPM_IPS.RGRLLCAMSProyectoMDD.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("UPM_IPS.RGRLLCAMSProyectoMDD.SecondaryWindow/Type.Description", typeof(global::UPM_IPS.RGRLLCAMSProyectoMDD.RGRLLCAMSProyectoMDDDomainModel), "UPM_IPS.RGRLLCAMSProyectoMDD.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("c6665ec2-822e-4f31-b26f-d577fbc281a1")]
+		public global::System.String Type
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return typePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				TypePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the SecondaryWindow.Type domain property.
+		/// </summary>
+		internal sealed partial class TypePropertyHandler : DslModeling::DomainPropertyValueHandler<SecondaryWindow, global::System.String>
+		{
+			private TypePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the SecondaryWindow.Type domain property value handler.
+			/// </summary>
+			public static readonly TypePropertyHandler Instance = new TypePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the SecondaryWindow.Type domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return TypeDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(SecondaryWindow element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.typePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(SecondaryWindow element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.typePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region TargetSecondaryWindow opposite domain role accessor
 		
 		/// <summary>

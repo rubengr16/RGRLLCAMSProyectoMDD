@@ -5,7 +5,6 @@ public class	DialogFilm extends Dialog implements ActionListener
 {
 
 	private DialogTime	windowTime;
-	private DialogCity	windowCity;
 
 	private Button		itemDanger;
 	private Button		itemPlanet;
@@ -16,13 +15,13 @@ public class	DialogFilm extends Dialog implements ActionListener
 	private Button		buttonAnterior;
 	private Button		buttonSalir;
 
-	public DialogFilm(Frame parent, boolean modal)
+	public DialogFilm(Dialog parent, boolean modal)
 	{
 		super(parent, "DialogFilm", modal);
 
 		this.setTitle("DialogFilm");
 
-		windowCity = new DialogCity(this, false);
+		windowTime = new DialogTime(this, false);
 
 		this.setLayout(new FlowLayout());
 

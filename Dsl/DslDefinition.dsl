@@ -74,6 +74,13 @@
       <BaseClass>
         <DomainClassMoniker Name="Window" />
       </BaseClass>
+      <Properties>
+        <DomainProperty Id="c6665ec2-822e-4f31-b26f-d577fbc281a1" Description="Description for UPM_IPS.RGRLLCAMSProyectoMDD.SecondaryWindow.Type" Name="Type" DisplayName="Type">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
     </DomainClass>
     <DomainClass Id="c2a7d042-efae-4f26-a454-4f73bc2eec5b" Description="Description for UPM_IPS.RGRLLCAMSProyectoMDD.Menu" Name="Menu" DisplayName="Menu" Namespace="UPM_IPS.RGRLLCAMSProyectoMDD">
       <Properties>
@@ -403,6 +410,9 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="targetSecondaryWindow">
             <DomainRelationshipMoniker Name="SecondaryWindowReferencesTargetSecondaryWindow" />
           </XmlRelationshipData>
+          <XmlPropertyData XmlName="type">
+            <DomainPropertyMoniker Name="SecondaryWindow/Type" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="SecondaryWindowReferencesTargetSecondaryWindow" MonikerAttributeName="" SerializeId="true" MonikerElementName="secondaryWindowReferencesTargetSecondaryWindowMoniker" ElementName="secondaryWindowReferencesTargetSecondaryWindow" MonikerTypeName="SecondaryWindowReferencesTargetSecondaryWindowMoniker">

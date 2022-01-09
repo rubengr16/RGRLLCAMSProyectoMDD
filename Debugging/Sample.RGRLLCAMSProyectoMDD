@@ -178,7 +178,7 @@
       </secondaryWindow>
     </tapizHasWindow>
     <tapizHasWindow Id="744de7a1-26db-4474-8dfb-182fe5aba4ae">
-      <secondaryWindow Id="35fa4b39-4719-4e1f-9aae-c01b9c22ca3a" name="City" sizeX="300" sizeY="250">
+      <secondaryWindow Id="35fa4b39-4719-4e1f-9aae-c01b9c22ca3a" name="City" sizeX="300" sizeY="250" type="Son">
         <menu>
           <windowHasMenu Id="d991c087-c421-42c9-a6a7-fa5951e634eb">
             <menu Id="6900509b-2a56-4d89-89ec-86013b522a24" id="0" title="Indique su localidad" name="Town">
@@ -227,7 +227,7 @@
       </secondaryWindow>
     </tapizHasWindow>
     <tapizHasWindow Id="e79b99d3-fa23-48dd-b0e0-0330c3ff5bc2">
-      <secondaryWindow Id="5db568eb-d308-457d-b7b3-b9bbbf0dcb91" name="Canc" sizeX="300" sizeY="250">
+      <secondaryWindow Id="5db568eb-d308-457d-b7b3-b9bbbf0dcb91" name="Canc" sizeX="300" sizeY="250" type="Son">
         <menu>
           <windowHasMenu Id="7da4efeb-8a0f-45d8-9cf5-e450959ac673">
             <menu Id="df1c8226-5cce-41e5-883f-ee3d5bc19d1e" id="0" title="Seleccione su reserva a cancelar" name="Cancel">

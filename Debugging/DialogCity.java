@@ -5,7 +5,6 @@ public class	DialogCity extends Dialog implements ActionListener
 {
 
 	private DialogFilm	windowFilm;
-	private FrameCINESIA	frameCINESIA;
 
 	private Button		itemMadrid;
 	private Button		itemBarcelona;
@@ -23,7 +22,7 @@ public class	DialogCity extends Dialog implements ActionListener
 
 		this.setTitle("DialogCity");
 
-		frameCINESIA = new FrameCINESIA();
+		windowFilm = new DialogFilm(this, false);
 
 		this.setLayout(new FlowLayout());
 

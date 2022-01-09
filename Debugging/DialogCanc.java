@@ -4,7 +4,6 @@ import java.awt.event.*;
 public class	DialogCanc extends Dialog implements ActionListener
 {
 
-	private FrameCINESIA	frameCINESIA;
 
 	private Button		itemAC;
 	private Button		itemRC;
@@ -18,7 +17,6 @@ public class	DialogCanc extends Dialog implements ActionListener
 
 		this.setTitle("DialogCanc");
 
-		frameCINESIA = new FrameCINESIA();
 
 		this.setLayout(new FlowLayout());
 

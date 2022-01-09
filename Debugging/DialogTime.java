@@ -5,7 +5,6 @@ public class	DialogTime extends Dialog implements ActionListener
 {
 
 	private DialogSeat	windowSeat;
-	private DialogCity	windowCity;
 
 	private Button		item14;
 	private Button		item17;
@@ -15,13 +14,13 @@ public class	DialogTime extends Dialog implements ActionListener
 	private Button		buttonAnterior;
 	private Button		buttonSalir;
 
-	public DialogTime(Frame parent, boolean modal)
+	public DialogTime(Dialog parent, boolean modal)
 	{
 		super(parent, "DialogTime", modal);
 
 		this.setTitle("DialogTime");
 
-		windowCity = new DialogCity(this, false);
+		windowSeat = new DialogSeat(this, false);
 
 		this.setLayout(new FlowLayout());
 

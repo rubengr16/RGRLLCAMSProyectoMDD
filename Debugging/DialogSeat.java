@@ -4,7 +4,6 @@ import java.awt.event.*;
 public class	DialogSeat extends Dialog implements ActionListener
 {
 
-	private DialogCity	windowCity;
 
 	private Button		item21;
 	private Button		item22;
@@ -26,13 +25,12 @@ public class	DialogSeat extends Dialog implements ActionListener
 	private Button		buttonAnterior;
 	private Button		buttonSalir;
 
-	public DialogSeat(Frame parent, boolean modal)
+	public DialogSeat(Dialog parent, boolean modal)
 	{
 		super(parent, "DialogSeat", modal);
 
 		this.setTitle("DialogSeat");
 
-		windowCity = new DialogCity(this, false);
 
 		this.setLayout(new FlowLayout());
 

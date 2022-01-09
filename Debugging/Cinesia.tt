@@ -15,13 +15,6 @@
 			setClassHeader(window.Name, "Frame");
 			foreach(Window sWindow in ((MainWindow)window).SecondaryWindow)
 				declareWindow(sWindow.Name);
-			foreach(Button button in window.Button)
-			{
-				if (String.Equals(button.Title, "Anterior") && button.id == 0)
-					declareFrame(button.Type);
-				else if (String.Equals(button.Title, "Anterior"))
-					declareWindow(button.Type);
-			}
 			WriteLine("");
 			foreach(Menu menu in window.Menu)
 				foreach(Item item in menu.Item)
@@ -40,14 +33,6 @@
 			setClassHeader(window.Name, "Dialog");
 			foreach(Window sWindow in ((SecondaryWindow)window).TargetSecondaryWindow)
 				declareWindow(sWindow.Name);
-			foreach(Button button in window.Button)
-			{
-				if (String.Equals(button.Title, "Anterior") && button.id == 0)
-					declareFrame(button.Type);
-				else if (String.Equals(button.Title, "Anterior"))
-					declareWindow(button.Type);
-
-			}
 			WriteLine("");
 			foreach(Menu menu in window.Menu)
 				foreach(Item item in menu.Item)
@@ -118,8 +103,14 @@
 	private void	constructor(string name, string type, Window window)
 	{
 		Write("\tpublic " + type + name + "(");
-		if (String.Equals(type, "Dialog"))
-			Write("Frame parent, boolean modal");
+		if (window is SecondaryWindow)
+		{
+			if (String.Equals(((SecondaryWindow)window).Type, "Son"))
+				Write("Frame ");
+			else
+				Write("Dialog ");
+			Write("parent, boolean modal");
+		}
 		WriteLine(")\n\t{");
 		Write("\t\tsuper(");
 		if (String.Equals(type, "Dialog"))
@@ -129,13 +120,9 @@
 		if (window is MainWindow)
 			foreach(Window sWindow in ((MainWindow)window).SecondaryWindow)
 				WriteLine("\t\twindow" + sWindow.Name + " = new Dialog" + sWindow.Name + "(this, false);");
-		foreach(Button button in window.Button)
-		{
-			if (String.Equals(button.Title, "Anterior") && button.id == 0)
-				WriteLine("\t\tframe" + button.Type + " = new Frame" + button.Type + "();");	
-			else if (String.Equals(button.Title, "Anterior"))
-				WriteLine("\t\twindow" + button.Type + " = new Dialog" + button.Type + "(this, false);");
-		}
+		else
+			foreach(Window sWindow in ((SecondaryWindow)window).TargetSecondaryWindow)
+				WriteLine("\t\twindow" + sWindow.Name + " = new Dialog" + sWindow.Name + "(this, false);");
 		WriteLine("\n\t\tthis.setLayout(new FlowLayout());\n");
 		if (String.Equals(type, "Frame"))
 		{
