@@ -117,6 +117,9 @@
 <#+
 	private void	constructor(string name, string type, Window window)
 	{
+		bool modal;
+
+		modal = true;
 		Write("\tpublic " + type + name + "(");
 		if (String.Equals(type, "Dialog"))
 			Write("Frame parent, boolean modal");
@@ -128,16 +131,40 @@
 		WriteLine("\t\tthis.setTitle(\"" + type + name + "\");\n");
 		if (window is MainWindow)
 			foreach(Window sWindow in ((MainWindow)window).SecondaryWindow)
-				WriteLine("\t\twindow" + sWindow.Name + " = new Dialog" + sWindow.Name + "(this, true);");
+			{
+				if (modal)
+				{
+					WriteLine("\t\twindow" + sWindow.Name + " = new Dialog" + sWindow.Name + "(this, true);");
+					modal = false;
+				}
+				else
+					WriteLine("\t\twindow" + sWindow.Name + " = new Dialog" + sWindow.Name + "(this, false);");
+			}
 		else
 			foreach(Window sWindow in ((SecondaryWindow)window).TargetSecondaryWindow)
-				WriteLine("\t\twindow" + sWindow.Name + " = new Dialog" + sWindow.Name + "(parent, true);");
+			{
+				if (modal)
+				{
+					WriteLine("\t\twindow" + sWindow.Name + " = new Dialog" + sWindow.Name + "(parent, true);");
+					modal = false;
+				}
+				else
+					WriteLine("\t\twindow" + sWindow.Name + " = new Dialog" + sWindow.Name + "(parent, false);");
+			}
 		foreach(Button button in window.Button)
 		{
 			if (String.Equals(button.Title, "Anterior") && button.id == 0)
 				WriteLine("\t\tframe" + button.Type + " = new Frame" + button.Type + "();");	
 			else if (String.Equals(button.Title, "Anterior"))
-				WriteLine("\t\twindow" + button.Type + " = new Dialog" + button.Type + "(parent, true);");
+			{
+				if (modal)
+				{
+					WriteLine("\t\twindow" + button.Type + " = new Dialog" + button.Type + "(parent, true);");
+					modal = false;
+				}
+				else
+					WriteLine("\t\twindow" + button.Type + " = new Dialog" + button.Type + "(parent, false);");
+			}
 		}
 		WriteLine("\n\t\tthis.setLayout(new FlowLayout());\n");
 		if (String.Equals(type, "Frame"))

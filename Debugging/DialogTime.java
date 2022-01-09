@@ -22,7 +22,7 @@ public class	DialogTime extends Dialog implements ActionListener
 		this.setTitle("DialogTime");
 
 		windowSeat = new DialogSeat(parent, true);
-		windowCity = new DialogCity(parent, true);
+		windowCity = new DialogCity(parent, false);
 
 		this.setLayout(new FlowLayout());
 

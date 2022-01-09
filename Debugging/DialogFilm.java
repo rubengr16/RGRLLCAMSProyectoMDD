@@ -23,7 +23,7 @@ public class	DialogFilm extends Dialog implements ActionListener
 		this.setTitle("DialogFilm");
 
 		windowTime = new DialogTime(parent, true);
-		windowCity = new DialogCity(parent, true);
+		windowCity = new DialogCity(parent, false);
 
 		this.setLayout(new FlowLayout());
 

@@ -19,7 +19,7 @@ public class	FrameCINESIA extends Frame implements ActionListener
 		this.setTitle("FrameCINESIA");
 
 		windowCity = new DialogCity(this, true);
-		windowCanc = new DialogCanc(this, true);
+		windowCanc = new DialogCanc(this, false);
 
 		this.setLayout(new FlowLayout());
 
