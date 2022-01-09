@@ -22,14 +22,11 @@
 	private void	setHTMLHeader(string name)
 	{
 		WriteLine("<html>\n<head>\n\t<title>Pagina" + name + "</title>\n" +
-				  "\t<style>\n\t\tbody{font-family:arial;}\n\t\ttable{font-size:80%;background:rgb(0,110,110)}\n" +
-				  "\t\tp{color:rgb(0,250,250);font:bold; margin-bottom:0px; padding-bottom:0px;}\n" +
-				  "\t\ttd.menu{background:rgb(0,150,150)}\n" +
-				  "\t\ttable.menu {\n\t\t\tfont-size:100%;\n\t\t\tposition:absolute;\n\t\t\tvisibility:hidden;\n\t\t}\n\t</style>"
+				  "\t<link  rel=\"stylesheet\" href=\"my_style.css\">"
 			);
 		WriteLine("\t<script type=\"text/javascript\">\n" +
 				  "\t\tfunction showmenu(elmnt)\n\t\t{\n\t\t\tdocument.getElementById(elmnt).style.visibility=\"visible\";\n\t\t}\n" +
-				  "\t\tfunction showmenu(elmnt)\n\t\t{\n\t\t\tdocument.getElementById(elmnt).style.visibility=\"hidden\";\n\t\t}\n" +
+				  "\t\tfunction hidemenu(elmnt)\n\t\t{\n\t\t\tdocument.getElementById(elmnt).style.visibility=\"hidden\";\n\t\t}\n" +
 				  "\t</script>\n</head>\n"
 			);
 	}
@@ -43,26 +40,30 @@
 		n_menu = 0;
 		foreach(Menu menu in window.Menu)
 			n_menu++;
-		WriteLine("<table width=\"100\">\n\t<tr>\n");
+		WriteLine("\t<table width=\"100%\">\n\t<tr>\n");
 		n_menu = 100 / n_menu;
 		foreach(Menu menu in window.Menu)
 		{
-			WriteLine("\t<td onmouseover=\"showmenu('" + menu.Title + "')\" onmouseout=\"hidemenu('" + menu.Title + "')\">\n" +
-					  "\t\t<p>" + menu.Title + "</p>\n" +
-					  "\t\t<table class=\"menu\" id=\"" + menu.Title + "\" width=\"" + n_menu.ToString() + "%\">\n"
+			WriteLine("\t\t<td onmouseover=\"showmenu('" + menu.Title + "')\" onmouseout=\"hidemenu('" + menu.Title + "')\">\n" +
+					  "\t\t\t<p>" + menu.Title + "</p>\n" +
+					  "\t\t\t<table class=\"menu\" id=\"" + menu.Title + "\" width=\"" + n_menu.ToString() + "%\">\n"
 					
 			);
 			foreach(Item item in menu.Item)
 			{
-				WriteLine("\t\t<tr>\n\t\t\t<td class=\"menu\">\n");
+				WriteLine("\t\t\t\t<tr>\n\t\t\t\t\t\t<td class=\"menu\">\n");
 				if (String.Equals(item.Type, "End"))
-					WriteLine("<a href=\"javascript:alert('Fin de la Aplicacion'); window.close();\"> Salir </a>");
+					WriteLine("\t\t\t\t\t\t<a href=\"javascript:alert('Fin de la Aplicacion'); window.close();\"> " + item.Title + " </a>");
+				else if (!String.Equals(item.Type, ""))
+					WriteLine("\t\t\t\t\t\t\t<a href=\"Pagina" + item.Type + ".html\"> " + item.Title + " </a>");
 				else
-					WriteLine("<a href=\"Pagina" + item.Type + ".html\"> " + item.Title + " </a>");
+					WriteLine("\t\t\t\t\t\t\t<a href=\"Pagina" + window.Name + ".html\"> " + item.Title + " </a>");
+				WriteLine("\t\t\t\t\t\t</td>\n\t\t\t\t</tr>");
+
 			}
-			WriteLine("\t\t</table>");
+			WriteLine("\t\t\t</table>");
 		}
-		WriteLine("\t\t\t</td>\t\t</tr>\n\t</table>");
+		WriteLine("\t\t</td>\n\t</tr>\n\t</table>");
 	}
 #>
 
@@ -72,9 +73,9 @@
 		foreach(Button button in window.Button)
 		{
 			if (String.Equals(button.Type, "End"))
-				WriteLine("<button onclick=\"javascript:alert('Fin de la Aplicacion'); window.close();\"> Salir </button>");
+				WriteLine("\t<button onclick=\"javascript:alert('Fin de la Aplicacion'); window.close();\"> Salir </button>");
 			else
-				WriteLine("<button onclick=\"javascript:document.location='Pagina"+ button.Type + "'\"> " + button.Type + " </button>");
+				WriteLine("\t<button onclick=\"javascript:document.location='Pagina"+ button.Type + ".html'\"> " + button.Title + " </button>");
 		}
 	}
 #>

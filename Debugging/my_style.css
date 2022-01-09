@@ -1,0 +1,39 @@
+body {
+    font-family: 'Comic Sans MS';
+}
+
+body {
+    background-color: rgb(30,30,30);
+}
+
+table {
+    font-size: 100%;
+    background: rgb(197,17,15)
+}
+
+p {
+    color: rgb(0,0,0);
+    font: bold;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+td.menu {
+    background: rgb(139,66,66)
+}
+
+table.menu {
+    font-size: 100%;
+    position: absolute;
+    visibility: hidden;
+}
+
+button {
+    background-color: rgb(128,128,128);
+    font: bold;
+    border-radius: 5px;
+    border: 3px solid rgb(197,17,15);
+    position: relative;
+    bottom: -100px;
+    left: 50px;
+}

@@ -1,23 +1,13 @@
 <html>
 <head>
 	<title>PaginaFilm</title>
-	<style>
-		body{font-family:arial;}
-		table{font-size:80%;background:rgb(0,110,110)}
-		p{color:rgb(0,250,250);font:bold; margin-bottom:0px; padding-bottom:0px;}
-		td.menu{background:rgb(0,150,150)}
-		table.menu {
-			font-size:100%;
-			position:absolute;
-			visibility:hidden;
-		}
-	</style>
+	<link  rel="stylesheet" href="my_style.css">
 	<script type="text/javascript">
 		function showmenu(elmnt)
 		{
 			document.getElementById(elmnt).style.visibility="visible";
 		}
-		function showmenu(elmnt)
+		function hidemenu(elmnt)
 		{
 			document.getElementById(elmnt).style.visibility="hidden";
 		}
@@ -25,41 +15,52 @@
 </head>
 
 <body>
-<table width="100">
+	<table width="100%">
 	<tr>
 
-	<td onmouseover="showmenu('Seleccione su película')" onmouseout="hidemenu('Seleccione su película')">
-		<p>Seleccione su película</p>
-		<table class="menu" id="Seleccione su película" width="100%">
+		<td onmouseover="showmenu('Seleccione Su Pelicula')" onmouseout="hidemenu('Seleccione Su Pelicula')">
+			<p>Seleccione Su Pelicula</p>
+			<table class="menu" id="Seleccione Su Pelicula" width="100%">
 
-		<tr>
-			<td class="menu">
+				<tr>
+						<td class="menu">
 
-<a href="PaginaTime.html"> Un Peligro Mayor </a>
-		<tr>
-			<td class="menu">
+							<a href="PaginaTime.html"> Un Peligro Mayor </a>
+						</td>
+				</tr>
+				<tr>
+						<td class="menu">
 
-<a href="PaginaTime.html"> Planet ETSISI </a>
-		<tr>
-			<td class="menu">
+							<a href="PaginaTime.html"> Planet ETSISI </a>
+						</td>
+				</tr>
+				<tr>
+						<td class="menu">
 
-<a href="PaginaTime.html"> Mision Imposible: Aprobando IPS </a>
-		<tr>
-			<td class="menu">
+							<a href="PaginaTime.html"> Mision Imposible: Aprobando IPS </a>
+						</td>
+				</tr>
+				<tr>
+						<td class="menu">
 
-<a href="PaginaTime.html"> Mr. Robot </a>
-		<tr>
-			<td class="menu">
+							<a href="PaginaTime.html"> Mr. Robot </a>
+						</td>
+				</tr>
+				<tr>
+						<td class="menu">
 
-<a href="PaginaTime.html"> Aprobando IPS: La Pelicula </a>
-		</table>
-			</td>		</tr>
+							<a href="PaginaTime.html"> Aprobando IPS: La Pelicula </a>
+						</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
 	</table>
 
 	<br>
 	<br>
 	<br>
-<button onclick="javascript:document.location='PaginaCity'"> City </button>
-<button onclick="javascript:alert('Fin de la Aplicacion'); window.close();"> Salir </button>
+	<button onclick="javascript:document.location='PaginaCity.html'"> Anterior </button>
+	<button onclick="javascript:alert('Fin de la Aplicacion'); window.close();"> Salir </button>
 </body>
 </html>

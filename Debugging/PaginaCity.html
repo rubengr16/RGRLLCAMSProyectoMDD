@@ -1,23 +1,13 @@
 <html>
 <head>
 	<title>PaginaCity</title>
-	<style>
-		body{font-family:arial;}
-		table{font-size:80%;background:rgb(0,110,110)}
-		p{color:rgb(0,250,250);font:bold; margin-bottom:0px; padding-bottom:0px;}
-		td.menu{background:rgb(0,150,150)}
-		table.menu {
-			font-size:100%;
-			position:absolute;
-			visibility:hidden;
-		}
-	</style>
+	<link  rel="stylesheet" href="my_style.css">
 	<script type="text/javascript">
 		function showmenu(elmnt)
 		{
 			document.getElementById(elmnt).style.visibility="visible";
 		}
-		function showmenu(elmnt)
+		function hidemenu(elmnt)
 		{
 			document.getElementById(elmnt).style.visibility="hidden";
 		}
@@ -25,50 +15,63 @@
 </head>
 
 <body>
-<table width="100">
+	<table width="100%">
 	<tr>
 
-	<td onmouseover="showmenu('Indique su localidad')" onmouseout="hidemenu('Indique su localidad')">
-		<p>Indique su localidad</p>
-		<table class="menu" id="Indique su localidad" width="50%">
+		<td onmouseover="showmenu('Indique su localidad')" onmouseout="hidemenu('Indique su localidad')">
+			<p>Indique su localidad</p>
+			<table class="menu" id="Indique su localidad" width="50%">
 
-		<tr>
-			<td class="menu">
+				<tr>
+						<td class="menu">
 
-<a href="Pagina.html"> Madrid </a>
-		<tr>
-			<td class="menu">
+							<a href="PaginaCity.html"> Madrid </a>
+						</td>
+				</tr>
+				<tr>
+						<td class="menu">
 
-<a href="Pagina.html"> Barcelona </a>
-		<tr>
-			<td class="menu">
+							<a href="PaginaCity.html"> Barcelona </a>
+						</td>
+				</tr>
+				<tr>
+						<td class="menu">
 
-<a href="Pagina.html"> Sevilla </a>
-		</table>
-	<td onmouseover="showmenu('Seleccione un cine')" onmouseout="hidemenu('Seleccione un cine')">
-		<p>Seleccione un cine</p>
-		<table class="menu" id="Seleccione un cine" width="50%">
+							<a href="PaginaCity.html"> Sevilla </a>
+						</td>
+				</tr>
+			</table>
+		<td onmouseover="showmenu('Seleccione un cine')" onmouseout="hidemenu('Seleccione un cine')">
+			<p>Seleccione un cine</p>
+			<table class="menu" id="Seleccione un cine" width="50%">
 
-		<tr>
-			<td class="menu">
+				<tr>
+						<td class="menu">
 
-<a href="PaginaFilm.html"> Cinesa </a>
-		<tr>
-			<td class="menu">
+							<a href="PaginaFilm.html"> Cinesa </a>
+						</td>
+				</tr>
+				<tr>
+						<td class="menu">
 
-<a href="PaginaFilm.html"> Yelmo Cines </a>
-		<tr>
-			<td class="menu">
+							<a href="PaginaFilm.html"> Yelmo Cines </a>
+						</td>
+				</tr>
+				<tr>
+						<td class="menu">
 
-<a href="PaginaFilm.html"> Cines Sin Fin </a>
-		</table>
-			</td>		</tr>
+							<a href="PaginaFilm.html"> Cines Sin Fin </a>
+						</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
 	</table>
 
 	<br>
 	<br>
 	<br>
-<button onclick="javascript:document.location='PaginaCINESIA'"> CINESIA </button>
-<button onclick="javascript:alert('Fin de la Aplicacion'); window.close();"> Salir </button>
+	<button onclick="javascript:document.location='PaginaCINESIA.html'"> Anterior </button>
+	<button onclick="javascript:alert('Fin de la Aplicacion'); window.close();"> Salir </button>
 </body>
 </html>

@@ -5,7 +5,7 @@
       <mainWindow Id="50abf75e-0342-457b-8e64-f85fa4d9d51e" name="CINESIA" sizeX="500" sizeY="300">
         <menu>
           <windowHasMenu Id="6f054121-d589-4b28-a250-9d283ec128f5">
-            <menu Id="e581efe4-9e82-495c-93fe-2aabad3abadc" id="0" title="¿Qué quiere hacer?" name="Question">
+            <menu Id="e581efe4-9e82-495c-93fe-2aabad3abadc" id="0" title="Que quiere hacer?" name="Question">
               <item>
                 <menuHasItem Id="381373f8-ae54-4e61-8ee8-e69e0d7f8df7">
                   <item Id="16a0a8c0-5675-405e-bb6f-3308606fc62f" title="Reservar Pelicula" name="Book" type="City" />
@@ -36,7 +36,7 @@
       <secondaryWindow Id="11df728c-444c-4f74-a6d6-27a9fa72bece" name="Film" sizeX="300" sizeY="250">
         <menu>
           <windowHasMenu Id="38693350-0097-45f8-bff6-830035301c79">
-            <menu Id="f980568c-4890-46c5-a6a9-a22b31abc6d0" id="0" title="Seleccione su película" name="Film">
+            <menu Id="f980568c-4890-46c5-a6a9-a22b31abc6d0" id="0" title="Seleccione Su Pelicula" name="Film">
               <item>
                 <menuHasItem Id="ce31cf28-4e15-42ee-a9e4-40a423c6e2e5">
                   <item Id="367fef14-1070-43ac-acbf-8d7302e98fcc" title="Un Peligro Mayor" name="Danger" type="Time" />
@@ -76,7 +76,7 @@
       <secondaryWindow Id="dca50cab-9c8a-4f62-83a0-81e7d0bab45f" name="Time" sizeX="300" sizeY="250">
         <menu>
           <windowHasMenu Id="58ade387-4df5-4016-b574-0b3dba766015">
-            <menu Id="4bd6dcb3-e66c-450d-8327-0dae11a8f6a1" id="0" title="Seleccione la sesión" name="Session">
+            <menu Id="4bd6dcb3-e66c-450d-8327-0dae11a8f6a1" id="0" title="Seleccione la sesion" name="Session">
               <item>
                 <menuHasItem Id="2fb6ed7f-4776-4ea1-ac87-e1383cb13ba4">
                   <item Id="1539d343-77b4-4bd2-804a-b24e97bdc4f9" title="14:00" name="14" type="Seat" />
