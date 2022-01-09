@@ -23,7 +23,6 @@ public class	DialogCity extends Dialog implements ActionListener
 
 		this.setTitle("DialogCity");
 
-		windowFilm = new DialogFilm(parent, true);
 		frameCINESIA = new FrameCINESIA();
 
 		this.setLayout(new FlowLayout());

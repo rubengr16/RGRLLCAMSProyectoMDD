@@ -32,7 +32,7 @@ public class	DialogSeat extends Dialog implements ActionListener
 
 		this.setTitle("DialogSeat");
 
-		windowCity = new DialogCity(parent, true);
+		windowCity = new DialogCity(this, false);
 
 		this.setLayout(new FlowLayout());
 
