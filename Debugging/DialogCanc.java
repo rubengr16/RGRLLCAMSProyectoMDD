@@ -37,7 +37,7 @@ public class	DialogCanc extends Dialog implements ActionListener
 
 
 		this.setSize(300, 250);
-		this.setVisible(true);
+
 	}
 
 	public void	actionPerformed(ActionEvent ae)
@@ -49,7 +49,7 @@ public class	DialogCanc extends Dialog implements ActionListener
 		if (o == itemRC)
 			System.exit(0);
 		if (o == buttonAnterior)
-			frameCINESIA.setVisible(true);
+			this.setVisible(false);
 		else if (o == buttonSalir)
 			System.exit(0);
 	}

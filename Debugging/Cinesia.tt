@@ -147,7 +147,10 @@
 			foreach(Item item in menu.Item)
 				actionItem(item);
 		WriteLine("");
-		WriteLine("\n\t\tthis.setSize(" + window.SizeX + ", " + window.SizeY + ");\n\t\tthis.setVisible(true);\n\t}\n");
+		WriteLine("\n\t\tthis.setSize(" + window.SizeX + ", " + window.SizeY + ");\n");
+		if (window is MainWindow)
+			WriteLine("\t\tthis.setVisible(true);\n");
+		WriteLine("\t}\n");
 	}
 #>
 
@@ -239,8 +242,8 @@
 					Write("\t\t");
 					i = true;
 				}
-				if (button.id == 0)
-					WriteLine("if (o == button" + button.Title + ")\n\t\t\tframe" + button.Type + ".setVisible(true);");
+				if (button.id == 1)
+					WriteLine("if (o == button" + button.Title + ")\n\t\t\tthis.setVisible(false);");
 				else
 					WriteLine("if (o == button" + button.Title + ")\n\t\t\twindow" + button.Type + ".setVisible(true);");
 			}

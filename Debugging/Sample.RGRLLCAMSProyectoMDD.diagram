@@ -170,7 +170,7 @@
     <metaforaButton Id="67c8aa28-b3ea-4056-91b8-08983eb16bf1" absoluteBounds="18.375, 14, 1.625, 1.5">
       <buttonMoniker Id="40110f23-e71e-4792-ab68-708fbce0409c" />
     </metaforaButton>
-    <metaforaButton Id="24209520-cade-4104-bf5d-555528b11214" absoluteBounds="26.875, 9.125, 1.75, 1.625">
+    <metaforaButton Id="24209520-cade-4104-bf5d-555528b11214" absoluteBounds="26.875, 9.25, 1.75, 1.625">
       <buttonMoniker Id="34c08882-f837-42ed-b783-2d4942a1ee75" />
     </metaforaButton>
     <metaforaEnd Id="48056e9b-7d44-4dc1-abc0-2a725945d97c" absoluteBounds="32.25, 7, 1.5, 1.5">
@@ -198,7 +198,7 @@
         <metaforaButtonMoniker Id="67c8aa28-b3ea-4056-91b8-08983eb16bf1" />
       </nodes>
     </connectorEndButton>
-    <connectorEndButton Id="eaf4dfe7-ba22-4f73-99a5-bcb061e6a917" edgePoints="[(32.25 : 7.75); (27.75 : 7.75); (27.75 : 9.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <connectorEndButton Id="eaf4dfe7-ba22-4f73-99a5-bcb061e6a917" edgePoints="[(32.25 : 7.75); (27.75 : 7.75); (27.75 : 9.25)]" fixedFrom="Algorithm" fixedTo="NotFixed">
       <endReferencesButtonMoniker Id="0487a0f4-7ad2-43f4-a82f-d0e4db2aaf0e" />
       <nodes>
         <metaforaEndMoniker Id="48056e9b-7d44-4dc1-abc0-2a725945d97c" />

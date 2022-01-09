@@ -47,7 +47,7 @@ public class	DialogTime extends Dialog implements ActionListener
 
 
 		this.setSize(300, 250);
-		this.setVisible(true);
+
 	}
 
 	public void	actionPerformed(ActionEvent ae)
@@ -63,7 +63,7 @@ public class	DialogTime extends Dialog implements ActionListener
 		else if (o == item22)
 			windowSeat.setVisible(true);
 		else if (o == buttonAnterior)
-			windowCity.setVisible(true);
+			this.setVisible(false);
 		else if (o == buttonSalir)
 			System.exit(0);
 	}
